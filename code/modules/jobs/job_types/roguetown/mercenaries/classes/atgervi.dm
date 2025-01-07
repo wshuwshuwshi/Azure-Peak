@@ -1,13 +1,13 @@
-/datum/advclass/mercenary/atvergi
-	name = "Atvergi"
+/datum/advclass/mercenary/atgervi
+	name = "Atgervi"
 	tutorial = "Fear. What more can you feel when a stranger tears apart your friend with naught but hand and maw? What more can you feel when your warriors fail to slay an invader? What more could you ask for, when hiring a mercenary?"
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDS
-	outfit = /datum/outfit/job/roguetown/mercenary/atvergi
+	outfit = /datum/outfit/job/roguetown/mercenary/atgervi
 	category_tags = list(CTAG_MERCENARY)
 	cmode_music = 'sound/music/combat_gronn.ogg'
 
-/datum/outfit/job/roguetown/mercenary/atvergi/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/roguetown/mercenary/atgervi/pre_equip(mob/living/carbon/human/H)
 	..()
 
 	// CLASS ARCHETYPES
