@@ -853,7 +853,7 @@
 
 /obj/item/clothing/head/roguetown/helmet/otavan
 	name = "otavan helmet"
-	desc = ""
+	desc = "A helmet of Otavan make, similar in structure to a Psydonian Armet but fitted with an angular klappvisier."
 	icon_state = "otavahelm"
 	item_state = "otavahelm"
 	adjustable = CAN_CADJUST
@@ -865,6 +865,18 @@
 	smeltresult = /obj/item/ingot/steel
 	smelt_bar_num = 2
 	max_integrity = 300
+	detail_tag = "_detail"
+	color = "#FFFFFF"
+	detail_color = "#c7732f"
+
+/obj/item/clothing/head/roguetown/helmet/otavan/update_icon()
+	cut_overlays()
+	if(get_detail_tag())
+		var/mutable_appearance/pic = mutable_appearance(icon(icon, "[icon_state][detail_tag]"))
+		pic.appearance_flags = RESET_COLOR
+		if(get_detail_color())
+			pic.color = get_detail_color()
+		add_overlay(pic)
 
 /obj/item/clothing/head/roguetown/helmet/otavan/getonmobprop(tag)
 	if(tag)

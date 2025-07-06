@@ -88,7 +88,7 @@
 	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/sewing/doublefabricbedsheet
-	name = "bedsheet, double fabric (2 fibers, 4 cloth), 2 silk"
+	name = "bedsheet, double fabric (2 fibers, 4 cloth, 2 silk)"
 	result = list(/obj/item/bedsheet/rogue/fabric_double)
 	reqs = list(/obj/item/natural/cloth = 4,
 				/obj/item/natural/fibers = 2,

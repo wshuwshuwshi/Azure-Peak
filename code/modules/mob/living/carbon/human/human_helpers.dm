@@ -111,7 +111,12 @@
 		return TRUE
 
 /mob/living/carbon/human/get_punch_dmg()
-	var/damage = 12
+
+	var/damage
+	if(STASTR > UNARMED_DAMAGE_DEFAULT || STASTR < 10)
+		damage = STASTR
+	else
+		damage = UNARMED_DAMAGE_DEFAULT
 
 	var/used_str = STASTR
 
@@ -125,16 +130,13 @@
 	if(used_str <= 9)
 		damage = max(damage - (damage * ((10 - used_str) * 0.1)), 1)
 
-	if(istype(G, /obj/item/clothing/gloves/roguetown/plate))
-		damage = (damage * 1.20)
-	if(istype(G, /obj/item/clothing/gloves/roguetown/chain))
-		damage = (damage * 1.15)
-	if(istype(G, /obj/item/clothing/gloves/roguetown/leather))
-		damage = (damage * 1.10) 
+	if(istype(G, /obj/item/clothing/gloves/roguetown))
+		var/obj/item/clothing/gloves/roguetown/GL = G
+		damage = (damage * GL.unarmed_bonus)
 
 	if(mind)
 		if(mind.has_antag_datum(/datum/antagonist/werewolf))
-			return 30
+			return 50
 
 	return damage
 

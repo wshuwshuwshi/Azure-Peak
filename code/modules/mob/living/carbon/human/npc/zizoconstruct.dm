@@ -43,7 +43,7 @@ GLOBAL_LIST_INIT(zizoconstruct_aggro, world.file2list("strings/rt/zconstructaggr
 	..()
 	job = "Zizo Construct"
 	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_INFINITE_STAMINA, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_INFINITE_ENERGY, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOPAIN, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_TOXIMMUNE, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_CIVILIZEDBARBARIAN, TRAIT_GENERIC)
@@ -74,6 +74,10 @@ GLOBAL_LIST_INIT(zizoconstruct_aggro, world.file2list("strings/rt/zconstructaggr
 	H.STAEND = 20
 	H.STAPER = 8
 	H.STAINT = 1
+	H.adjust_skillrank(/datum/skill/combat/unarmed, 5, TRUE)
+	H.adjust_skillrank(/datum/skill/combat/wrestling, 5, TRUE)
+	H.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
+	H.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
 
 /obj/item/rogueweapon/knuckles/bronzeknuckles/zizoconstruct //I have no unarmed and I must parry. More interesting than defprob and gives construct PC a fun item to loot and use
 	name = "construct knuckles"

@@ -21,7 +21,7 @@
 
 	// Add druidic skill for Dendor followers
 	if(istype(H.patron, /datum/patron/divine/dendor))
-		H.mind.adjust_skillrank(/datum/skill/magic/druidic, 3, TRUE)
+		H.adjust_skillrank(/datum/skill/magic/druidic, 3, TRUE)
 		to_chat(H, span_notice("As a follower of Dendor, you have innate knowledge of druidic magic."))
 
 	// CLASS ARCHETYPES
@@ -49,13 +49,13 @@
 				)
 			var/datum/devotion/C = new /datum/devotion(H, H.patron)
 			C.grant_miracles(H, cleric_tier = CLERIC_T1, passive_gain = FALSE, devotion_limit = CLERIC_REQ_1)	//Capped to T1 miracles.
-			H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 4, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/swimming, 3, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/magic/holy, 2, TRUE)
+			H.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)
+			H.adjust_skillrank(/datum/skill/combat/unarmed, 4, TRUE)
+			H.adjust_skillrank(/datum/skill/misc/swimming, 3, TRUE)
+			H.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
+			H.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
+			H.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
+			H.adjust_skillrank(/datum/skill/magic/holy, 2, TRUE)
 			ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 			ADD_TRAIT(H, TRAIT_CIVILIZEDBARBARIAN, TRAIT_GENERIC)
 			switch(H.patron?.type)
@@ -108,17 +108,17 @@
 				/obj/item/flashlight/flare/torch = 1, 
 				/obj/item/recipe_book/survival = 1,
 			)
-			H.mind.adjust_skillrank(/datum/skill/combat/shields, 3, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/maces, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/magic/holy, 2, TRUE)
+			H.adjust_skillrank(/datum/skill/combat/shields, 3, TRUE)
+			H.adjust_skillrank(/datum/skill/combat/maces, 2, TRUE)
+			H.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
+			H.adjust_skillrank(/datum/skill/combat/whipsflails, 2, TRUE)
+			H.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
+			H.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
+			H.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
+			H.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
+			H.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
+			H.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
+			H.adjust_skillrank(/datum/skill/magic/holy, 2, TRUE)
 			H.cmode_music = 'sound/music/combat_holy.ogg'
 			ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 			switch(H.patron?.type)
@@ -170,12 +170,12 @@
 						beltr = /obj/item/rogueweapon/sword/long/oldpsysword
 					else
 						beltr = /obj/item/rogueweapon/sword/long
-					H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
+					H.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
 				if("Mace")
-					H.mind.adjust_skillrank(/datum/skill/combat/maces, 1, TRUE)
+					H.adjust_skillrank(/datum/skill/combat/maces, 1, TRUE)
 					beltr = /obj/item/rogueweapon/mace
 				if("Flail")
-					H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 1, TRUE)
+					H.adjust_skillrank(/datum/skill/combat/whipsflails, 1, TRUE)
 					beltr = /obj/item/rogueweapon/flail
 			H.set_blindness(0)
 			H.change_stat("strength", 2)
@@ -199,22 +199,22 @@
 			var/datum/devotion/C = new /datum/devotion(H, H.patron)
 			C.grant_miracles(H, cleric_tier = CLERIC_T1, passive_gain = FALSE, devotion_limit = CLERIC_REQ_1)	//Capped to T1 miracles.
 			backpack_contents = list(/obj/item/flashlight/flare/torch = 1, /obj/item/recipe_book/survival = 1)
-			H.mind.adjust_skillrank(/datum/skill/misc/music, 4, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/magic/holy, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
+			H.adjust_skillrank(/datum/skill/misc/music, 4, TRUE)
+			H.adjust_skillrank(/datum/skill/magic/holy, 2, TRUE)
+			H.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
+			H.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
+			H.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
+			H.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
+			H.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
+			H.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
+			H.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
 			ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 			ADD_TRAIT(H, TRAIT_EMPATH, TRAIT_GENERIC)
 			H.cmode_music = 'sound/music/combat_bard.ogg'
 			H.change_stat("strength", 1)
 			H.change_stat("endurance", 1)
 			H.change_stat("speed", 2)
-			H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/mockery)
+			H.mind?.AddSpell(new /obj/effect/proc_holder/spell/invoked/mockery)
 			switch(H.patron?.type)
 				if(/datum/patron/old_god)
 					cloak = /obj/item/clothing/cloak/templar/psydon
@@ -270,15 +270,15 @@
 			belt = /obj/item/storage/belt/rogue/leather
 			beltr = /obj/item/flashlight/flare/torch/lantern
 			backpack_contents = list(/obj/item/storage/belt/rogue/pouch/coins/poor = 1, /obj/item/flashlight/flare/torch = 1, /obj/item/recipe_book/survival = 1)
-			H.mind.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/magic/holy, 4, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 1, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 1, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/reading, 4, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
+			H.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE)
+			H.adjust_skillrank(/datum/skill/magic/holy, 4, TRUE)
+			H.adjust_skillrank(/datum/skill/combat/wrestling, 1, TRUE)
+			H.adjust_skillrank(/datum/skill/combat/unarmed, 1, TRUE)
+			H.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
+			H.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
+			H.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
+			H.adjust_skillrank(/datum/skill/misc/reading, 4, TRUE)
+			H.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
 			H.cmode_music = 'sound/music/combat_holy.ogg'
 			H.change_stat("intelligence", 2)
 			H.change_stat("endurance", 1)
@@ -313,8 +313,8 @@
 				if(/datum/patron/inhumen/zizo)
 					cloak = /obj/item/clothing/suit/roguetown/shirt/robe 
 					head = /obj/item/clothing/head/roguetown/roguehood
-					H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/minion_order)
-					H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/gravemark)
+					H.mind?.AddSpell(new /obj/effect/proc_holder/spell/invoked/minion_order)
+					H.mind?.AddSpell(new /obj/effect/proc_holder/spell/invoked/gravemark)
 				else
 					cloak = /obj/item/clothing/suit/roguetown/shirt/robe //placeholder, anyone who doesn't have cool patron drip sprites just gets generic robes
 					head = /obj/item/clothing/head/roguetown/roguehood
@@ -341,11 +341,6 @@
 			neck = /obj/item/clothing/neck/roguetown/psicross/malum
 		if(/datum/patron/divine/eora)
 			neck = /obj/item/clothing/neck/roguetown/psicross/eora
-		if(/datum/patron/inhumen/zizo)
-			H.cmode_music = 'sound/music/combat_cult.ogg'
-			neck = /obj/item/roguekey/inhumen
-		if (/datum/patron/inhumen/matthios)
-			H.cmode_music = 'sound/music/combat_cult.ogg'
 		if(/datum/patron/divine/xylix) // Random pricross for Xylix
 			var/list/psicross_options = list(
 			/obj/item/clothing/neck/roguetown/psicross,
@@ -360,3 +355,9 @@
 			/obj/item/clothing/neck/roguetown/psicross/eora
 			)
 			neck = pick(psicross_options)
+		if(/datum/patron/inhumen/zizo,
+	  		/datum/patron/inhumen/matthios,
+	   		/datum/patron/inhumen/graggar,
+	   		/datum/patron/inhumen/baotha)
+			H.cmode_music = 'sound/music/combat_cult.ogg'
+			ADD_TRAIT(H, TRAIT_HERESIARCH, TRAIT_GENERIC)

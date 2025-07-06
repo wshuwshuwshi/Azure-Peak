@@ -181,17 +181,28 @@
 
 
 /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/otavan
-	name = "fencer gambeson"
+	name = "fencing gambeson"
 	desc = "A large shirt with heavy padding meant to be used below armor. Will probably stop an arrow, unlikely to stop a bolt."
 	icon_state = "fancygamb"
 	allowed_race = NON_DWARVEN_RACE_TYPES
-	color = "#FFFFFF"
+	color = "#282e83"
+	detail_color = "#c7732f"
 	shiftable = FALSE
 	sellprice = 30
+	detail_tag = "_detail"
+
+/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/otavan/update_icon()
+	cut_overlays()
+	if(get_detail_tag())
+		var/mutable_appearance/pic = mutable_appearance(icon(icon, "[icon_state][detail_tag]"))
+		pic.appearance_flags = RESET_COLOR
+		if(get_detail_color())
+			pic.color = get_detail_color()
+		add_overlay(pic)
 
 /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/freifechter
 	name = "padded fencing shirt"
-	desc = "A strong quilted shirt that places little weight on the arms, it's worn underneath a strong leather vest. It lasts a bit less than a regular padded gambeson and won't cover your legs."
+	desc = "A strong quilted shirt that places little weight on the arms, it's worn underneath a strong leather vest. It won't cover your legs."
 	max_integrity = 200		//Back to default. I think it's right if it doesn't stop you from getting legshotted.
 	body_parts_covered = COVERAGE_ALL_BUT_LEGS
 	detail_tag = "_detail"
@@ -950,30 +961,17 @@
 
 	max_integrity = 500
 
-	/// Whether the user has the Heavy Armour Trait prior to donning.
-	var/traited = FALSE
-
 /obj/item/clothing/suit/roguetown/armor/plate/full/fluted/ornate/equipped(mob/living/user, slot)
-	..()
+	. = ..()
 	if(slot != SLOT_ARMOR)
 		return
-	user.change_stat("endurance", 1)
-	user.change_stat("constitution", 1)
-	to_chat(user, span_notice("Endure til' inevitability."))
-	if (!HAS_TRAIT(user, TRAIT_MEDIUMARMOR))
-		return
-	if (HAS_TRAIT(user, TRAIT_HEAVYARMOR))
-		traited = TRUE
-		return
-	ADD_TRAIT(user, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 
-/obj/item/clothing/suit/roguetown/armor/plate/full/fluted/ornate/dropped(mob/living/user)
-	..()
-	user.change_stat("endurance", -1)
-	user.change_stat("constitution", -1)
-	to_chat(user, span_notice("Trust in thyself."))
-	if (!traited)
-		REMOVE_TRAIT(user, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
+	user.apply_status_effect(/datum/status_effect/buff/psydonic_endurance)
+
+/obj/item/clothing/suit/roguetown/armor/plate/full/fluted/ornate/dropped(mob/living/carbon/human/user)
+	. = ..()
+	if(istype(user) && user.wear_armor == src)
+		user.remove_status_effect(/datum/status_effect/buff/psydonic_endurance)
 
 /obj/item/clothing/suit/roguetown/armor/plate/full/matthios
 	name = "gilded fullplate"
@@ -1011,7 +1009,7 @@
 
 
 /obj/item/clothing/suit/roguetown/armor/plate/full/bikini
-	name = "full-plate corslet"
+	name = "full-plate corset"
 	desc = "Breastplate, pauldrons, couters, cuisses... did you forget something?"
 	icon_state = "platekini"
 	allowed_sex = list(FEMALE)
@@ -1067,6 +1065,18 @@
 	item_state = "corsethalfplate"
 	adjustable = CAN_CADJUST
 	allowed_race = NON_DWARVEN_RACE_TYPES
+	detail_tag = "_detail"
+	color = "#FFFFFF"
+	detail_color = "#282e83"
+
+/obj/item/clothing/suit/roguetown/armor/plate/otavan/update_icon()
+	cut_overlays()
+	if(get_detail_tag())
+		var/mutable_appearance/pic = mutable_appearance(icon(icon, "[icon_state][detail_tag]"))
+		pic.appearance_flags = RESET_COLOR
+		if(get_detail_color())
+			pic.color = get_detail_color()
+		add_overlay(pic)
 
 /obj/item/clothing/suit/roguetown/armor/plate/otavan/AdjustClothes(mob/user)
 	if(loc == user)

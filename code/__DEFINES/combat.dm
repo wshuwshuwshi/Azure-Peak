@@ -356,3 +356,5 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 
 //Weapon values
 #define BLUNT_DEFAULT_PENFACTOR		-100
+
+#define UNARMED_DAMAGE_DEFAULT		12

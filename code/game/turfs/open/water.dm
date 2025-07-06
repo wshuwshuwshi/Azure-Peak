@@ -84,7 +84,6 @@
 	var/const/BASE_STAM_DRAIN = 15
 	var/const/MIN_STAM_DRAIN = 1
 	var/const/STAM_PER_LEVEL = 5
-	var/const/NPC_SWIM_LEVEL = SKILL_LEVEL_APPRENTICE
 	var/const/UNSKILLED_ARMOR_PENALTY = 40
 	if(!isliving(swimmer))
 		return 0
@@ -96,7 +95,7 @@
 		return 0 // going with the flow
 	if(swimmer.buckled)
 		return 0
-	var/swimming_skill_level = swimmer.mind ? swimmer.mind.get_skill_level(/datum/skill/misc/swimming) : NPC_SWIM_LEVEL
+	var/swimming_skill_level = swimmer.get_skill_level(/datum/skill/misc/swimming) 
 	. = max(BASE_STAM_DRAIN - (swimming_skill_level * STAM_PER_LEVEL), MIN_STAM_DRAIN)
 //	. += (swimmer.checkwornweight()*2)
 	if(!swimmer.check_armor_skill())
@@ -233,18 +232,23 @@
 			var/mob/living/carbon/C = user
 			if(C.is_mouth_covered())
 				return
-		playsound(user, pick('sound/foley/waterwash (1).ogg','sound/foley/waterwash (2).ogg'), 100, FALSE)
 		user.visible_message(span_info("[user] starts to drink from [src]."))
-		if(do_after(L, 25, target = src))
-			var/list/waterl = list()
-			waterl[water_reagent] = 5
-			var/datum/reagents/reagents = new()
-			reagents.add_reagent_list(waterl)
-			reagents.trans_to(L, reagents.total_volume, transfered_by = user, method = INGEST)
-			playsound(user,pick('sound/items/drink_gen (1).ogg','sound/items/drink_gen (2).ogg','sound/items/drink_gen (3).ogg'), 100, TRUE)
-			onbite(user) // Auto repeat drinking
+		drink_act(user, L)
 		return
 	..()
+
+/turf/open/water/proc/drink_act(mob/user, mob/living/L)
+	playsound(user, pick('sound/foley/waterwash (1).ogg','sound/foley/waterwash (2).ogg'), 100, FALSE)
+	if(L.stat != CONSCIOUS)
+		return
+	if(do_after(L, 25, target = src))
+		var/list/waterl = list(/datum/reagent/water = 5)
+		var/datum/reagents/reagents = new()
+		reagents.add_reagent_list(waterl)
+		reagents.trans_to(L, reagents.total_volume, transfered_by = user, method = INGEST)
+		playsound(user,pick('sound/items/drink_gen (1).ogg','sound/items/drink_gen (2).ogg','sound/items/drink_gen (3).ogg'), 100, TRUE)
+		drink_act(user, L)
+	return
 
 /turf/open/water/Destroy()
 	. = ..()
@@ -263,8 +267,7 @@
 
 /turf/open/water/get_slowdown(mob/user)
 	var/returned = slowdown
-	if(user?.mind && swim_skill)
-		returned = returned - (user.mind.get_skill_level(/datum/skill/misc/swimming))
+	returned = returned - (user.get_skill_level(/datum/skill/misc/swimming))
 	return returned
 
 //turf/open/water/Initialize()

@@ -357,7 +357,7 @@
 /obj/structure/flora/roguegrass/bush/attack_hand(mob/user)
 	if(isliving(user))
 		var/mob/living/L = user
-		user.changeNext_move(CLICK_CD_MELEE)
+		user.changeNext_move(CLICK_CD_INTENTCAP)
 		playsound(src.loc, "plantcross", 50, FALSE, -1)
 		if(do_after(L, rand(1,5), target = src))
 			if(!looty.len && (world.time > res_replenish))
@@ -611,6 +611,7 @@
 	climbable = FALSE
 	dir = SOUTH
 	debris = list(/obj/item/natural/fibers = 1)
+	max_integrity = 9999 // From base 1. So antag don't get to destroy it easily :).
 	var/list/looty = list()
 	var/bushtype
 	var/res_replenish
@@ -635,7 +636,7 @@
 /obj/structure/flora/roguegrass/pyroclasticflowers/attack_hand(mob/user)
 	if(isliving(user))
 		var/mob/living/L = user
-		user.changeNext_move(CLICK_CD_MELEE)
+		user.changeNext_move(CLICK_CD_INTENTCAP)
 		playsound(src.loc, "plantcross", 80, FALSE, -1)
 		if(do_after(L, rand(1,5), target = src))
 			if(!looty.len && (world.time > res_replenish))
@@ -684,7 +685,7 @@
 /obj/structure/flora/roguegrass/swampweed/attack_hand(mob/user)
 	if(isliving(user))
 		var/mob/living/L = user
-		user.changeNext_move(CLICK_CD_MELEE)
+		user.changeNext_move(CLICK_CD_INTENTCAP)
 		playsound(src.loc, "plantcross", 80, FALSE, -1)
 		if(do_after(L, rand(1,5), target = src))
 			if(!looty.len && (world.time > res_replenish))

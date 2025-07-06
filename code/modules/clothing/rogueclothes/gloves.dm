@@ -11,6 +11,9 @@
 	max_heat_protection_temperature = 361
 	experimental_inhand = FALSE
 
+	/// Unarmed damage multiplier (for pure fists / wrestling only)
+	var/unarmed_bonus = 1
+
 /obj/item/clothing/gloves/roguetown/leather
 	name = "leather gloves"
 	desc = ""
@@ -26,6 +29,7 @@
 	anvilrepair = null
 	sewrepair = TRUE
 	salvage_result = /obj/item/natural/hide/cured
+	unarmed_bonus = 1.1
 
 /obj/item/clothing/gloves/roguetown/leather/black
 	color = CLOTHING_BLACK
@@ -96,6 +100,7 @@
 	drop_sound = 'sound/foley/dropsound/chain_drop.ogg'
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/steel
+	unarmed_bonus = 1.15
 
 /obj/item/clothing/gloves/roguetown/chain/aalloy
 	name = "decrepit chain gauntlets"
@@ -164,6 +169,7 @@
 
 	grid_width = 64
 	grid_height = 32
+	unarmed_bonus = 1.2
 
 /obj/item/clothing/gloves/roguetown/plate/aalloy
 	name = "decrepit plate gauntlets"

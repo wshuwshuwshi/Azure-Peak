@@ -48,6 +48,7 @@
 	job = "Militia"
 	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_INFINITE_ENERGY, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	equipOutfit(new /datum/outfit/job/roguetown/human/species/human/northern/militia)
 	var/obj/item/organ/eyes/organ_eyes = getorgan(/obj/item/organ/eyes)
@@ -124,3 +125,12 @@
 	else
 		H.hairstyle = pick("Mohawk","Braid (Low)", "Braid (Short)", "Messy")
 		H.facial_hairstyle = pick("Beard (Viking)", "Beard (Long)", "Beard (Manly)")
+	H.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE)
+	H.adjust_skillrank(/datum/skill/combat/maces, 2, TRUE)
+	H.adjust_skillrank(/datum/skill/combat/axes, 2, TRUE)
+	H.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
+	H.adjust_skillrank(/datum/skill/combat/shields, 2, TRUE)
+	H.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE) // Trash mobs, untrained.
+	H.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
+	H.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
+	H.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)

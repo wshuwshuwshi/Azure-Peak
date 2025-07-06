@@ -31,7 +31,7 @@
 	parrysound = list('sound/combat/parry/shield/towershield (1).ogg','sound/combat/parry/shield/towershield (2).ogg','sound/combat/parry/shield/towershield (3).ogg')
 	parrysound = list('sound/combat/parry/shield/towershield (1).ogg','sound/combat/parry/shield/towershield (2).ogg','sound/combat/parry/shield/towershield (3).ogg')
 	max_integrity = 150
-	blade_dulling = DULLING_BASHCHOP
+	blade_dulling = DULLING_SHAFT_WOOD
 	anvilrepair = /datum/skill/craft/weaponsmithing
 	COOLDOWN_DECLARE(shield_bang)
 
@@ -164,6 +164,7 @@
 	throw_range = 3
 	wlength = WLENGTH_NORMAL
 	resistance_flags = FLAMMABLE
+	blade_dulling = DULLING_SHAFT_REINFORCED
 	wdefense = 10
 	coverage = 40
 	parrysound = list('sound/combat/parry/shield/towershield (1).ogg','sound/combat/parry/shield/towershield (2).ogg','sound/combat/parry/shield/towershield (3).ogg')
@@ -180,7 +181,7 @@
 	resistance_flags = null
 	flags_1 = CONDUCT_1
 	force = 20
-	blade_dulling = DULLING_BASH
+	blade_dulling = DULLING_SHAFT_METAL
 	sellprice = 30
 
 /obj/item/rogueweapon/shield/tower/holysee/dark
@@ -213,7 +214,7 @@
 	attacked_sound = list('sound/combat/parry/shield/metalshield (1).ogg','sound/combat/parry/shield/metalshield (2).ogg','sound/combat/parry/shield/metalshield (3).ogg')
 	parrysound = list('sound/combat/parry/shield/metalshield (1).ogg','sound/combat/parry/shield/metalshield (2).ogg','sound/combat/parry/shield/metalshield (3).ogg')
 	max_integrity = 300
-	blade_dulling = DULLING_BASH
+	blade_dulling = DULLING_SHAFT_METAL
 	sellprice = 30
 
 /obj/item/rogueweapon/shield/tower/metal/getonmobprop(tag)
@@ -232,12 +233,14 @@
 	wdefense = 9
 	icon_state = "ancientsh"
 	smeltresult = /obj/item/ingot/aalloy
+	blade_dulling = DULLING_SHAFT_CONJURED
 
 /obj/item/rogueweapon/shield/tower/metal/palloy
 	name = "ancient shield"
 	desc = "A ancient, venerable shield. Aeon's grasp has been lifted from it."
 	icon_state = "ancientsh"
 	smeltresult = /obj/item/ingot/purifiedaalloy
+	blade_dulling = DULLING_SHAFT_METAL
 
 /obj/item/rogueweapon/shield/tower/raneshen
 	name = "rider shield"
@@ -272,8 +275,8 @@
 	coverage = 10
 	attacked_sound = list('sound/combat/parry/shield/metalshield (1).ogg','sound/combat/parry/shield/metalshield (2).ogg','sound/combat/parry/shield/metalshield (3).ogg')
 	parrysound = list('sound/combat/parry/shield/metalshield (1).ogg','sound/combat/parry/shield/metalshield (2).ogg','sound/combat/parry/shield/metalshield (3).ogg')
-	max_integrity = 300
-	blade_dulling = DULLING_BASH
+	max_integrity = 180
+	blade_dulling = DULLING_SHAFT_CONJURED
 	associated_skill = /datum/skill/combat/shields
 	grid_width = 32
 	grid_height = 64
@@ -312,7 +315,7 @@
 	desc = "An object once before its time, now out of it. The artisan's hammerstrikes are still visible in the mottled surface, yet \
 	the encroach of rust and rot threatens even this memory."
 	icon_state = "ancient_buckler"
-	max_integrity = 180
+	max_integrity = 80
 	smeltresult = /obj/item/ingot/purifiedaalloy
 
 /obj/item/rogueweapon/shield/heater

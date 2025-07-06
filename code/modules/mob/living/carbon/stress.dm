@@ -124,7 +124,7 @@ GLOBAL_LIST_INIT(stress_messages, world.file2list("strings/rt/stress_messages.tx
 				play_mental_break_indicator()
 				apply_status_effect(/datum/status_effect/mood/vbad)
 
-	if(new_stress >=15)
+	if(new_stress >=13)
 		if(!HAS_TRAIT(src, TRAIT_EORAN_CALM) && !HAS_TRAIT(src, TRAIT_EORAN_SERENE))
 			random_stress_message()
 

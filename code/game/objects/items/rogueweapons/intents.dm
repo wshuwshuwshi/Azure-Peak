@@ -123,6 +123,9 @@
 			for(var/part in int.target_parts)
 				str +="|[bodyzone2readablezone(part)]|"
 			inspec += str
+	if(intent_intdamage_factor != 1)
+		var/percstr = abs(intent_intdamage_factor - 1) * 100
+		inspec += "\nThis intent deals [percstr]% [intent_intdamage_factor > 1 ? "more" : "less"] damage to integrity."
 	inspec += "<br>----------------------"
 
 	to_chat(user, "[inspec.Join()]")
@@ -456,6 +459,7 @@
 	misscost = 5
 	releasedrain = 2	//Lowered for intent stam usage.
 	swingdelay = 0
+	clickcd = 10
 	rmb_ranged = TRUE
 	candodge = TRUE
 	canparry = TRUE
@@ -463,6 +467,7 @@
 	miss_text = "swing a fist at the air"
 	miss_sound = "punchwoosh"
 	item_d_type = "blunt"
+	intent_intdamage_factor = 0.5
 
 /datum/intent/unarmed/punch/rmb_ranged(atom/target, mob/user)
 	if(ismob(target))

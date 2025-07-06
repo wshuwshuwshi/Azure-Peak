@@ -147,6 +147,10 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 				/turf/open/floor/rogue/grass,
 				)
 	ambush_mobs = list(
+				new /datum/ambush_config/pair_of_direbear = 10,
+				new /datum/ambush_config/trio_of_highwaymen = 10,
+				new /datum/ambush_config/singular_minotaur = 10,
+				new /datum/ambush_config/duo_minotaur = 5,
 				new /datum/ambush_config/solo_treasure_hunter = 10,
 				new /datum/ambush_config/duo_treasure_hunter = 1
 				)
@@ -175,6 +179,10 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 				/turf/open/floor/rogue/grass,
 				)
 	ambush_mobs = list(
+				new /datum/ambush_config/pair_of_direbear = 10,
+				new /datum/ambush_config/trio_of_highwaymen = 10,
+				new /datum/ambush_config/singular_minotaur = 10,
+				new /datum/ambush_config/duo_minotaur = 5,
 				new /datum/ambush_config/solo_treasure_hunter = 5,
 				new /datum/ambush_config/duo_treasure_hunter = 1
 				)
@@ -658,6 +666,15 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound = 'sound/music/area/dungeon2.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
+	converted_type = /area/rogue/outdoors/dungeon1
+
+/area/rogue/under/cave/inhumen
+	name = "inhumen"
+	icon_state = "cave"
+	first_time_text = "FORSAKEN CATHEDRAL"
+	droning_sound = 'sound/music/unholy.ogg'
+	droning_sound_dusk = 'sound/music/unholy.ogg'
+	droning_sound_night = 'sound/music/unholy.ogg'
 	converted_type = /area/rogue/outdoors/dungeon1
 
 /area/rogue/under/cave/fishmandungeon //idk what the fish guys are called in lore

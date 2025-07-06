@@ -45,6 +45,7 @@ GLOBAL_LIST_INIT(searaider_aggro, world.file2list("strings/rt/searaideraggroline
 	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_INFINITE_ENERGY, TRAIT_GENERIC)
 	equipOutfit(new /datum/outfit/job/roguetown/human/species/human/northern/searaider)
 	gender = pick(MALE, FEMALE)
 	var/obj/item/organ/eyes/organ_eyes = getorgan(/obj/item/organ/eyes)
@@ -148,4 +149,13 @@ GLOBAL_LIST_INIT(searaider_aggro, world.file2list("strings/rt/searaideraggroline
 	H.STAEND = 15
 	H.STAPER = 10
 	H.STAINT = 1
-	H.STASTR = rand(14,16)
+	H.STASTR = 14
+	H.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
+	H.adjust_skillrank(/datum/skill/combat/maces, 3, TRUE)
+	H.adjust_skillrank(/datum/skill/combat/axes, 3, TRUE)
+	H.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
+	H.adjust_skillrank(/datum/skill/combat/shields, 3, TRUE)
+	H.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
+	H.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
+	H.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
+	H.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)

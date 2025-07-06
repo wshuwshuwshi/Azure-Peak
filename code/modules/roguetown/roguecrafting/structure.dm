@@ -580,7 +580,7 @@
 	craftdiff = 0
 
 /datum/crafting_recipe/roguetown/structure/strawbed
-	name = "straw bed"
+	name = "bed, straw"
 	result = /obj/structure/bed/rogue/shit
 	reqs = list(/obj/item/grown/log/tree/small = 1,
 				/obj/item/natural/fibers = 1)
@@ -590,7 +590,7 @@
 	craftdiff = 0
 
 /datum/crafting_recipe/roguetown/structure/bed
-	name = "nice bed"
+	name = "bed, nice"
 	result = /obj/structure/bed/rogue/inn
 	reqs = list(/obj/item/grown/log/tree/small = 2,
 				/obj/item/natural/cloth = 2)
@@ -601,7 +601,7 @@
 	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/structure/woolbed
-	name = "woolbed"
+	name = "bed, wood"
 	result = /obj/structure/bed/rogue/inn/wool
 	reqs = list(/obj/item/grown/log/tree/small = 2,
 				/obj/item/natural/cloth = 1)
@@ -612,7 +612,7 @@
 	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/structure/doublebed
-	name = "double bed"
+	name = "bed, double"
 	result = /obj/structure/bed/rogue/inn/double
 	reqs = list(/obj/item/grown/log/tree/small = 3,
 				/obj/item/natural/cloth = 4)
@@ -624,7 +624,7 @@
 
 
 /datum/crafting_recipe/roguetown/structure/wooldoublebed
-	name = "wool double bed"
+	name = "bed, double wool"
 	result = /obj/structure/bed/rogue/inn/wooldouble
 	reqs = list(/obj/item/grown/log/tree/small = 3,
 				/obj/item/natural/cloth = 3)

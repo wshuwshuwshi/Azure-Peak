@@ -268,7 +268,7 @@
 			switch(user.used_intent.blade_class)
 				if(BCLASS_CUT)
 					var/mob/living/lumberjacker = user
-					var/lumberskill = lumberjacker.mind.get_skill_level(/datum/skill/labor/lumberjacking)
+					var/lumberskill = lumberjacker.get_skill_level(/datum/skill/labor/lumberjacking)
 					if(!I.remove_bintegrity(1))
 						dullfactor = 0.2
 					else
@@ -277,7 +277,7 @@
 					cont = TRUE
 				if(BCLASS_CHOP)
 					var/mob/living/lumberjacker = user
-					var/lumberskill = lumberjacker.mind.get_skill_level(/datum/skill/labor/lumberjacking)
+					var/lumberskill = lumberjacker.get_skill_level(/datum/skill/labor/lumberjacking)
 					if(!I.remove_bintegrity(1))
 						dullfactor = 0.3
 					else
@@ -317,7 +317,7 @@
 					cont = TRUE
 				if(BCLASS_PICK)
 					var/mob/living/miner = user
-					var/mineskill = miner.mind.get_skill_level(/datum/skill/labor/mining)
+					var/mineskill = miner.get_skill_level(/datum/skill/labor/mining)
 					dullfactor = 1.5 * (mineskill * 0.1)
 					cont = TRUE
 			if(!cont)
@@ -329,7 +329,7 @@
 			if(user.used_intent.blade_class != BCLASS_PICK)
 				return 0
 			var/mob/living/miner = user
-			var/mineskill = miner.mind.get_skill_level(/datum/skill/labor/mining)
+			var/mineskill = miner.get_skill_level(/datum/skill/labor/mining)
 			newforce = newforce * (8+(mineskill*1.5))
 			shake_camera(user, 1, 1)
 			miner.mind.add_sleep_experience(/datum/skill/labor/mining, (miner.STAINT*0.2))
@@ -427,7 +427,7 @@
 	return newforce
 
 /obj/attacked_by(obj/item/I, mob/living/user)
-	user.changeNext_move(CLICK_CD_MELEE)
+	user.changeNext_move(CLICK_CD_INTENTCAP)
 	var/newforce = (get_complex_damage(I, user, blade_dulling) * I.demolition_mod)
 	if(!newforce)
 		testing("dam33")
@@ -463,7 +463,7 @@
 		return 0
 	if(user.used_intent.no_attack)
 		return 0
-	user.changeNext_move(CLICK_CD_MELEE)
+	user.changeNext_move(CLICK_CD_INTENTCAP)
 	log_combat(user, src, "attacked", I)
 	var/verbu = "hits"
 	verbu = pick(user.used_intent.attack_verb)

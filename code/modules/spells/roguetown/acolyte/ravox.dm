@@ -23,7 +23,7 @@
 	if(!isliving(user))
 		return FALSE
 	user.apply_status_effect(/datum/status_effect/divine_strike, user.get_active_held_item())
-	return ..()
+	return TRUE
 
 /datum/status_effect/divine_strike
 	id = "divine_strike"
@@ -102,7 +102,7 @@
 		if(target.mob_biotypes & MOB_UNDEAD)
 			continue
 		target.apply_status_effect(/datum/status_effect/buff/call_to_arms)
-	return ..()
+	return TRUE
 
 //Persistence - Harms the shit out of an undead mob/player while causing bleeding/pain wounds to clot at higher rate for living ones. Basically a 'shittier' yet still good greater heal effect.
 /obj/effect/proc_holder/spell/invoked/persistence
@@ -160,7 +160,7 @@
 				if(!isnull(bleeder.clotting_threshold) && bleeder.bleed_rate > bleeder.clotting_threshold)
 					var/difference = bleeder.bleed_rate - bleeder.clotting_threshold
 					bleeder.bleed_rate = max(bleeder.clotting_threshold, bleeder.bleed_rate - difference * situational_bonus)
-		return ..()
+		return TRUE
 	return FALSE
 
 /atom/movable/screen/alert/status_effect/buff/divine_strike
@@ -211,8 +211,8 @@
 					count++
 				else if(diff < 0)
 					chance -= 10
-			var/holymod = user.mind?.get_skill_level(/datum/skill/magic/holy) * 10
-			pull_distance += floor((user.mind?.get_skill_level(/datum/skill/magic/holy) - 1) / 2)	//+1 pull dist at Jman and Master Holy skill
+			var/holymod = user.get_skill_level(/datum/skill/magic/holy) * 10
+			pull_distance += floor((user.get_skill_level(/datum/skill/magic/holy) - 1) / 2)	//+1 pull dist at Jman and Master Holy skill
 			chance += holymod
 			user.visible_message(span_boldwarning("[user] yanks on a transluscent chain sticking out of [target]!"))
 			if(count > 3)	//More than half of the stats are in our favor.

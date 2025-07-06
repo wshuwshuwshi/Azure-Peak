@@ -104,6 +104,9 @@
 	grid_height = 64
 	grid_width = 32
 
+	//flipping knives has a cooldown on to_chat to reduce chatspam
+	COOLDOWN_DECLARE(flip_cooldown)
+
 /obj/item/rogueweapon/huntingknife/Initialize()
 	. = ..()
 	var/static/list/slapcraft_recipe_list = list(
@@ -123,6 +126,38 @@
 				return list("shrink" = 0.4,"sx" = -10,"sy" = 0,"nx" = 11,"ny" = 0,"wx" = -4,"wy" = 0,"ex" = 2,"ey" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
 			if("onbelt")
 				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
+
+/obj/item/rogueweapon/huntingknife/rmb_self(mob/user)
+	. = ..()
+	if(.)
+		return
+
+	SpinAnimation(4, 2) // The spin happens regardless of the cooldown
+
+	if(!COOLDOWN_FINISHED(src, flip_cooldown))
+		return
+
+	COOLDOWN_START(src, flip_cooldown, 3 SECONDS)
+	if((user.get_skill_level(/datum/skill/combat/knives) < 3) && prob(40))
+		user.visible_message(
+			span_danger("While trying to flip [src] [user] drops it instead!"),
+			span_userdanger("While trying to flip [src] you drop it instead!"),
+		)
+		var/mob/living/carbon/human/unfortunate_idiot = user
+		var/dropped_knife_target = pick(
+			BODY_ZONE_PRECISE_L_FOOT,
+			BODY_ZONE_PRECISE_R_FOOT,
+			)
+		unfortunate_idiot.apply_damage(src.force, BRUTE, dropped_knife_target)
+		user.dropItemToGround(src, TRUE)
+	else
+		user.visible_message(
+			span_notice("[user] spins [src] around [user.p_their()] finger"),
+			span_notice("You spin [src] around your finger"),
+		)
+		playsound(src, 'sound/foley/equip/swordsmall1.ogg', 20, FALSE)
+
+	return
 
 /obj/item/rogueweapon/huntingknife/copper
 	name = "copper knife"
@@ -708,7 +743,7 @@
 		var/obj/item/item = O
 		if(item.sewrepair && item.salvage_result) // We can only salvage objects which can be sewn!
 			var/salvage_time = 70
-			salvage_time = (70 - ((user.mind.get_skill_level(/datum/skill/misc/sewing)) * 10))
+			salvage_time = (70 - ((user.get_skill_level(/datum/skill/misc/sewing)) * 10))
 			if(!do_after(user, salvage_time, target = user))
 				return
 			
@@ -717,7 +752,7 @@
 			if(istype(item, /obj/item/storage))
 				var/obj/item/storage/bag = item
 				bag.emptyStorage()
-			var/skill_level = user.mind.get_skill_level(/datum/skill/misc/sewing)
+			var/skill_level = user.get_skill_level(/datum/skill/misc/sewing)
 			if(prob(50 - (skill_level * 10))) // We are dumb and we failed!
 				to_chat(user, span_info("I ruined some of the materials due to my lack of skill..."))
 				playsound(item, 'sound/foley/cloth_rip.ogg', 50, TRUE)

@@ -51,7 +51,7 @@
 	var/prob2explode = 100
 	if(user && user.mind)
 		prob2explode = 0
-		for(var/i in 1 to user.mind.get_skill_level(/datum/skill/magic/holy))
+		for(var/i in 1 to user.get_skill_level(/datum/skill/magic/holy))
 			prob2explode += 30
 	for(var/mob/living/L in targets)
 		var/isvampire = FALSE
@@ -93,7 +93,7 @@
 	overlay_state = "speakwithdead"
 	chargetime = 2 SECONDS
 	chargedloop = null
-	sound = 'sound/magic/churn.ogg'
+	sound = 'sound/misc/deadbell.ogg'
 	invocation = "Necra, show me my destination!"
 	invocation_type = "shout"
 	associated_skill = /datum/skill/magic/holy
@@ -110,7 +110,9 @@
 		return FALSE
 	for (var/obj/structure/underworld_portal/e_portal in user.contents) // checks if the portal exists, and shits them out
 		if(istype(e_portal))
+			e_portal.dispelled = FALSE //we are recasting after dispelling, its safe to set this as false.
 			e_portal.spitout_mob(user, T)
+			return TRUE
 	if(!locate(/obj/structure/underworld_portal) in T)
 		var/obj/structure/underworld_portal/portal = new /obj/structure/underworld_portal(T)
 		portal.caster = user
@@ -127,8 +129,9 @@
 	anchored = TRUE
 	density = FALSE
 	var/mob/living/caster // stores the caster. obviously.
-	var/mob/living/trapped // stores the trapped.
+	var/list/trapped = list()// stores the trapped.
 	var/time_id
+	var/dispelled = FALSE //Safety check
 
 /obj/structure/underworld_portal/examine(mob/living/carbon/user)
 	. = ..()
@@ -143,6 +146,7 @@
 		for (var/thing in contents)
 			if (istype(thing, /mob/living/carbon))
 				caster.contents.Add(src)
+				dispelled = TRUE
 				user.visible_message(
 					span_revenwarning("[user] dispels the doorway with a touch."),
 					span_purple("I close the gateway. Opening it again will release whatever is inside.")
@@ -154,6 +158,27 @@
 		return
 	gobble_mob(user, caster)
 	return TRUE
+
+
+/obj/structure/underworld_portal/Destroy()
+	if(dispelled == FALSE)//Only do this if we DON'T close it ourselves,that means something ELSE -FUNNY- happend.
+		visible_message(span_revenwarning("The portal collapses with an angry hiss."))
+		if(trapped)
+			for(var/mob/living/inportal in trapped)
+				spitout_mob(inportal, src.loc)
+	..()
+
+/obj/structure/underworld_portal/attack_right(mob/living/carbon/user, list/modifiers)
+	..()
+	if(user == caster)
+		if(trapped)
+			for(var/mob/living/inportal in trapped)
+				spitout_mob(inportal)
+				user.visible_message(
+							span_revenwarning("[user] gestures thier hand at the gateway to expel what is within."),
+							span_purple("I gesture at the gateway to release whatever is inside.")
+							)
+			return TRUE
 
 /obj/structure/underworld_portal/MouseDrop_T(atom/movable/O, mob/living/user)
 	if(!isliving(O))
@@ -185,21 +210,25 @@
 		span_revenwarning("[user] slips through the portal. Silence follows."),
 		span_purple("I touch the doorway. I slip through, and the world is silent and dark. I hear the distant rattle of a passing carriage.")
 		)
-	trapped = user
+	trapped += user
 	user.forceMove(src)
 	ADD_TRAIT(user, TRAIT_BLOODLOSS_IMMUNE, STATUS_EFFECT_TRAIT)
 	ADD_TRAIT(user, TRAIT_NOBREATH, STATUS_EFFECT_TRAIT)
 	user.add_client_colour(/datum/client_colour/monochrome)
-	time_id = addtimer(CALLBACK(src, PROC_REF(spitout_mob), user, null), 5 MINUTES, TIMER_UNIQUE | TIMER_OVERRIDE) // 5 mins timer else its spitting you out where the necran is.
+	time_id = addtimer(CALLBACK(src, PROC_REF(spitout_mob), user, null), 5 MINUTES, TIMER_UNIQUE | TIMER_OVERRIDE | TIMER_STOPPABLE) // 5 mins timer else its spitting you out where the necran is.
 	return TRUE
 
 /obj/structure/underworld_portal/proc/spitout_mob(mob/living/carbon/user, turf/T)
 	if(!trapped)
 		return FALSE
-	if(loc in user.contents)
-		forceMove(T ? T : user.loc)
-	trapped.forceMove(loc)
-	trapped = null
+	if(src in user.contents)
+		forceMove(T)
+
+	if(dispelled == TRUE)//dispelled at the caster, this is the case of we do not recast out dispelled portal and its been five minutes.
+		user.forceMove(caster.loc)
+		dispelled = FALSE
+	else
+		user.forceMove(loc)
 	if(time_id)
 		deltimer(time_id)
 	user.visible_message(
@@ -209,6 +238,7 @@
 	user.remove_client_colour(/datum/client_colour/monochrome)
 	REMOVE_TRAIT(user, TRAIT_BLOODLOSS_IMMUNE, STATUS_EFFECT_TRAIT)
 	REMOVE_TRAIT(user, TRAIT_NOBREATH, STATUS_EFFECT_TRAIT)
+	trapped -= user
 	return TRUE
 
 /obj/structure/underworld_portal/container_resist(mob/living/user)
@@ -218,7 +248,7 @@
 	var/resist_prob = user.STASTR * 2.5
 	if(!prob(resist_prob))
 		return
-	spitout_mob(caster)
+	spitout_mob(user)
 
 
 /obj/effect/proc_holder/spell/targeted/soulspeak
