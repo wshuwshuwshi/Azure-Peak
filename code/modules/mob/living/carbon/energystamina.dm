@@ -2,15 +2,15 @@
 	max_stamina = max_energy / 10
 
 	var/delay = 20
+	if(HAS_TRAIT(src, TRAIT_APRICITY)) 
+		switch(GLOB.tod) 
+			if("day", "dawn") 
+				delay = 13 
+			if("night", "dusk")
+				delay = 16
 	if(world.time > last_fatigued + delay) //regen fatigue
 		var/added = energy / max_energy
 		added = round(-10 + (added * - 40))
-		if(HAS_TRAIT(src, TRAIT_APRICITY)) 
-			switch(GLOB.tod) 
-				if("day", "dawn") 
-					delay = 13 
-				if("night", "dusk")
-					delay = 16
 		if(HAS_TRAIT(src, TRAIT_MISSING_NOSE))
 			added = round(added * 0.5, 1)
 		if(HAS_TRAIT(src, TRAIT_MONK_ROBE))
