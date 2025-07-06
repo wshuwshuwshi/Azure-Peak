@@ -6,9 +6,9 @@
 		var/added = energy / max_energy
 		added = round(-10 + (added * - 40))
 		if(HAS_TRAIT(src, TRAIT_APRICITY) && GLOB.tod == "day" || "dawn")
-			delay = 10
+			delay = 13
 		if(HAS_TRAIT(src, TRAIT_APRICITY) && GLOB.tod == "night" || "dusk")
-			delay = 15
+			delay = 16
 		if(HAS_TRAIT(src, TRAIT_MISSING_NOSE))
 			added = round(added * 0.5, 1)
 		if(HAS_TRAIT(src, TRAIT_MONK_ROBE))
