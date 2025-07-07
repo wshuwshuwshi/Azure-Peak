@@ -58,7 +58,6 @@
 	beltl = /obj/item/rogueweapon/sword/sabre
 	beltr = /obj/item/storage/keyring/guardcastle
 	backr = /obj/item/storage/backpack/rogue/satchel/black
-	backl = /obj/item/gwstrap
 	cloak = /obj/item/clothing/cloak/half/vet
 	belt = /obj/item/storage/belt/rogue/leather/black
 	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel/special = 1)
@@ -302,6 +301,7 @@
 			r_hand = /obj/item/rogueweapon/greatsword/grenz
 			H.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
 			H.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
+			backl = /obj/item/gwstrap
 		if("Halberd")
 			r_hand = /obj/item/rogueweapon/halberd
 			H.adjust_skillrank(/datum/skill/combat/axes, 1, TRUE) // SO, fun fact. The description of the grenzel halbardier says they specialize in axes, but they get no axe skill. Maybe this guy is where that rumor came from.
