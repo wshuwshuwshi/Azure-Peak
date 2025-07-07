@@ -31,7 +31,10 @@
 			shoes = /obj/item/clothing/shoes/roguetown/armor/rumaclan
 			gloves = /obj/item/clothing/gloves/roguetown/eastgloves2
 			backr = /obj/item/storage/backpack/rogue/satchel
-			backpack_contents = list(/obj/item/roguekey/mercenary, /obj/item/flashlight/flare/torch/lantern)
+			backpack_contents = list(
+				/obj/item/roguekey/mercenary,
+				/obj/item/flashlight/flare/torch/lantern,
+				)
 			H.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
 			H.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
 			H.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
@@ -62,7 +65,11 @@
 			gloves = /obj/item/clothing/gloves/roguetown/eastgloves2
 			backl = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve
 			backr = /obj/item/storage/backpack/rogue/satchel
-			backpack_contents = list(/obj/item/roguekey/mercenary, /obj/item/storage/belt/rogue/pouch/coins/poor, /obj/item/rogueweapon/huntingknife/idagger)
+			backpack_contents = list(
+				/obj/item/roguekey/mercenary,
+				/obj/item/storage/belt/rogue/pouch/coins/poor,
+				/obj/item/rogueweapon/huntingknife/idagger,
+				)
 			H.adjust_skillrank(/datum/skill/combat/bows, 5, TRUE)
 			H.adjust_skillrank(/datum/skill/combat/knives, 4, TRUE)
 			H.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)

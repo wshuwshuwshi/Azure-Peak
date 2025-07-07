@@ -50,7 +50,12 @@
 			gloves = /obj/item/clothing/gloves/roguetown/chain
 			pants = /obj/item/clothing/under/roguetown/splintlegs
 			backr = /obj/item/storage/backpack/rogue/satchel/black
-			backpack_contents = list(/obj/item/roguekey/mercenary, /obj/item/rogueweapon/huntingknife/idagger/navaja, /obj/item/clothing/neck/roguetown/shalal, /obj/item/flashlight/flare/torch)
+			backpack_contents = list(
+				/obj/item/roguekey/mercenary,
+				/obj/item/rogueweapon/huntingknife/idagger/navaja,
+				/obj/item/clothing/neck/roguetown/shalal,
+				/obj/item/flashlight/flare/torch,
+				)
 			H.grant_language(/datum/language/celestial)
 			var/weapons = list("Heavy Mace","Shamshir and Shield","Spear and Shield")
 			var/weapon_choice = input("Choose your weapon.", "TAKE UP ARMS") as anything in weapons
@@ -99,7 +104,12 @@
 			gloves = /obj/item/clothing/gloves/roguetown/angle
 			pants = /obj/item/clothing/under/roguetown/trou/leather/pontifex/raneshen
 			backr = /obj/item/storage/backpack/rogue/satchel/black
-			backpack_contents = list(/obj/item/roguekey/mercenary, /obj/item/rogueweapon/huntingknife/idagger/navaja, /obj/item/clothing/neck/roguetown/shalal, /obj/item/flashlight/flare/torch)
+			backpack_contents = list(
+				/obj/item/roguekey/mercenary,
+				/obj/item/rogueweapon/huntingknife/idagger/navaja,
+				/obj/item/clothing/neck/roguetown/shalal,
+				/obj/item/flashlight/flare/torch,
+				)
 			H.grant_language(/datum/language/celestial)
 			var/weapons = list("Shamshir and Javelin","Whips and Knives", "Recurve Bow")
 			var/weapon_choice = input("Choose your weapon.", "TAKE UP ARMS") as anything in weapons
@@ -156,7 +166,13 @@
 			gloves = /obj/item/clothing/gloves/roguetown/angle
 			pants = /obj/item/clothing/under/roguetown/trou/leather/pontifex/raneshen
 			backr = /obj/item/storage/backpack/rogue/satchel/black
-			backpack_contents = list(/obj/item/roguekey/mercenary, /obj/item/rogueweapon/huntingknife/idagger/navaja, /obj/item/clothing/neck/roguetown/shalal, /obj/item/spellbook_unfinished/pre_arcyne, /obj/item/flashlight/flare/torch)
+			backpack_contents = list(
+				/obj/item/roguekey/mercenary,
+				/obj/item/rogueweapon/huntingknife/idagger/navaja,
+				/obj/item/clothing/neck/roguetown/shalal,
+				/obj/item/spellbook_unfinished/pre_arcyne,
+				/obj/item/flashlight/flare/torch,
+				)
 			H.grant_language(/datum/language/celestial)
 
 	shoes = /obj/item/clothing/shoes/roguetown/shalal

@@ -66,15 +66,7 @@ GLOBAL_LIST_EMPTY(lord_titles)
 		if(STATION_TIME_PASSED() <= 10 MINUTES) //Late to the party? Stuck with default colors, sorry!
 			addtimer(CALLBACK(L, TYPE_PROC_REF(/mob, lord_color_choice)), 50)
 
-/datum/outfit/job/roguetown/lord
-	neck = /obj/item/storage/belt/rogue/pouch/coins/rich
-	cloak = /obj/item/clothing/cloak/lordcloak
-	belt = /obj/item/storage/belt/rogue/leather/plaquegold
-	beltl = /obj/item/storage/keyring/lord
-	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel/special = 1)
-	id = /obj/item/scomstone/garrison
-
-/datum/outfit/job/roguetown/lord/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/roguetown/lord/pre_equip(mob/living/carbon/human/H) //parent /datum/outfit/job/roguetown/lord isnt explicitly defined because it carried no vars of its own. this implicit definition is perfectly functional.
 	..()
 	if(SSroguemachine.crown == null || (QDELETED(SSroguemachine.crown)))
 		SSroguemachine.crown = null
@@ -114,8 +106,13 @@ GLOBAL_LIST_EMPTY(lord_titles)
 
 /datum/outfit/job/roguetown/lord/warrior/pre_equip(mob/living/carbon/human/H)
 	..()
-	l_hand = /obj/item/rogueweapon/lordscepter // If you put something in l hand with a mother outfit
-	// It will dupe
+	l_hand = /obj/item/rogueweapon/lordscepter
+	neck = /obj/item/storage/belt/rogue/pouch/coins/rich
+	cloak = /obj/item/clothing/cloak/lordcloak
+	belt = /obj/item/storage/belt/rogue/leather/plaquegold
+	beltl = /obj/item/storage/keyring/lord
+	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel/special = 1)
+	id = /obj/item/scomstone/garrison
 	H.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE)
 	H.adjust_skillrank(/datum/skill/combat/maces, 2, TRUE)
 	H.adjust_skillrank(/datum/skill/combat/crossbows, 3, TRUE)
@@ -156,7 +153,12 @@ GLOBAL_LIST_EMPTY(lord_titles)
 /datum/outfit/job/roguetown/lord/merchant/pre_equip(mob/living/carbon/human/H)
 	..()
 	l_hand = /obj/item/rogueweapon/lordscepter
-	
+	neck = /obj/item/storage/belt/rogue/pouch/coins/rich
+	cloak = /obj/item/clothing/cloak/lordcloak
+	belt = /obj/item/storage/belt/rogue/leather/plaquegold
+	beltl = /obj/item/storage/keyring/lord
+	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel/special = 1)
+	id = /obj/item/scomstone/garrison
 	H.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE)
 	H.adjust_skillrank(/datum/skill/combat/maces, 2, TRUE)
 	H.adjust_skillrank(/datum/skill/combat/crossbows, 4, TRUE) // Weapons suitable for defending yourself as a merchant.
@@ -197,6 +199,12 @@ GLOBAL_LIST_EMPTY(lord_titles)
 /datum/outfit/job/roguetown/lord/inbred/pre_equip(mob/living/carbon/human/H)
 	..()
 	l_hand = /obj/item/rogueweapon/lordscepter
+	neck = /obj/item/storage/belt/rogue/pouch/coins/rich
+	cloak = /obj/item/clothing/cloak/lordcloak
+	belt = /obj/item/storage/belt/rogue/leather/plaquegold
+	beltl = /obj/item/storage/keyring/lord
+	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel/special = 1)
+	id = /obj/item/scomstone/garrison
 	ADD_TRAIT(H, TRAIT_CRITICAL_WEAKNESS, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NORUN, TRAIT_GENERIC)
 	H.adjust_skillrank(/datum/skill/combat/bows, 1, TRUE)
