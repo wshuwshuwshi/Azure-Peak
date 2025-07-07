@@ -66,6 +66,7 @@
 	drop_sound = 'sound/foley/dropsound/cloth_drop.ogg'
 	anvilrepair = null
 	sewrepair = TRUE
+	smeltresult = null
 	salvage_amount = 1
 	salvage_result = /obj/item/natural/hide/cured
 

@@ -335,14 +335,19 @@ GLOBAL_LIST_INIT(stone_personality_descs, list(
 //rock munching
 /obj/item/natural/stone/attack(mob/living/M, mob/user)
 	testing("attack")
-	if(M.construct)
-		var/healydoodle = magic_power+1
-		M.apply_status_effect(/datum/status_effect/buff/rockmuncher, healydoodle)
-		qdel(src)
-		if(M == user)
-			user.visible_message(span_notice("[user] presses the stone to [user]'s body, and it is absorbed."), span_notice("I absorb the stone."))
-		else
-			user.visible_message(span_notice("[user] presses the stone to [M]'s body, and it is absorbed."), span_notice("I press the stone to [M], and it is absorbed."))
+	if(!user.cmode)
+		if(M.construct)
+			var/healydoodle = magic_power+1
+			M.apply_status_effect(/datum/status_effect/buff/rockmuncher, healydoodle)
+			qdel(src)
+			if(M == user)
+				user.visible_message(span_notice("[user] presses the stone to [user]'s body, and it is absorbed."), span_notice("I absorb the stone."))
+			else
+				user.visible_message(span_notice("[user] presses the stone to [M]'s body, and it is absorbed."), span_notice("I press the stone to [M], and it is absorbed."))
+		else // if theyre not a construct, but we're not in cmode, beat them 2 death with rocks.
+			return ..()
+	else // if we're in cmode, beat them to death with rocks.
+		return ..()
 
 /obj/item/natural/rock
 	name = "rock"

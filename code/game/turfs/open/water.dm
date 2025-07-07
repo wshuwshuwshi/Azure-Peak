@@ -268,7 +268,7 @@
 /turf/open/water/get_slowdown(mob/user)
 	var/returned = slowdown
 	returned = returned - (user.get_skill_level(/datum/skill/misc/swimming))
-	return returned
+	return max(returned, 0)
 
 //turf/open/water/Initialize()
 //	dir = pick(NORTH,SOUTH,WEST,EAST)

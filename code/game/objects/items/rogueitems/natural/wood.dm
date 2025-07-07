@@ -26,6 +26,8 @@
 		/datum/crafting_recipe/roguetown/survival/quarterstaff,
 		/datum/crafting_recipe/roguetown/survival/recurvepartial,
 		/datum/crafting_recipe/roguetown/survival/longbowpartial,
+		/datum/crafting_recipe/oar,
+		/datum/crafting_recipe/boat,
 		)
 
 	AddElement(
@@ -299,19 +301,6 @@
 
 /obj/item/grown/log/tree/stick/attackby(obj/item/I, mob/living/user, params)
 	user.changeNext_move(CLICK_CD_INTENTCAP)
-	if(user.used_intent?.blade_class == BCLASS_CUT)
-		playsound(get_turf(src.loc), 'sound/items/wood_sharpen.ogg', 100)
-		user.visible_message(span_notice("[user] starts sharpening [src]."))
-		if(do_after(user, 4 SECONDS))
-			user.visible_message(span_notice("[user] sharpens [src]."))
-			var/obj/item/grown/log/tree/stake/S = new /obj/item/grown/log/tree/stake(get_turf(src.loc))
-			if(user.is_holding(src))
-				user.dropItemToGround(src)
-				user.put_in_hands(S)
-			qdel(src)
-		else
-			user.visible_message(span_warning("[user] sharpens [src]."))
-		return
 	if(istype(I, /obj/item/grown/log/tree/stick))
 		var/obj/item/natural/B = I
 		var/obj/item/natural/bundle/stick/N = new(src.loc)

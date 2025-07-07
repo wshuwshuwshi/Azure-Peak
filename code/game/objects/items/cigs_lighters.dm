@@ -231,7 +231,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 /obj/item/clothing/mask/cigarette/extinguish()
 	if(!lit)
 		return
-	name = copytext(name,5,length(name)+1)
+	name = "[initial(name)]"
 	attack_verb = null
 	hitsound = null
 	damtype = BRUTE
@@ -498,7 +498,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 			item_state = icon_off
 			M.update_inv_mouth()
 			packeditem = 0
-//			name = "empty [initial(name)]"
+			name = "empty [initial(name)]"
 		STOP_PROCESSING(SSobj, src)
 		return
 	open_flame()
