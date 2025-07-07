@@ -808,12 +808,12 @@
 	desc = "A slate statue of the ancient god abyssor. One of many depictions drawn from a dream no doubt. This particular one is horrifying to look at."
 	icon_state = "abyssor"
 	icon = 'icons/roguetown/misc/tallandwide.dmi'
+	pixel_x = -16
 
 /obj/structure/fluff/statue/abyssor/dolomite
 	name = "abyssor statue"
 	desc = "A rare dolomite statue of the ancient god abyssor. Hewn from bleached rock as if the shimmer makes his faceless gaze any less terrifying."
 	icon_state = "abyssor_dolomite"
-	icon = 'icons/roguetown/misc/tallandwide.dmi'
 
 /obj/structure/fluff/statue/knight/r
 	icon_state = "knightstatue_r"
