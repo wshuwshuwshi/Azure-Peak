@@ -58,6 +58,7 @@
 	beltl = /obj/item/rogueweapon/sword/sabre
 	beltr = /obj/item/storage/keyring/guardcastle
 	backr = /obj/item/storage/backpack/rogue/satchel/black
+	backl = /obj/item/gwstrap
 	cloak = /obj/item/clothing/cloak/half/vet
 	belt = /obj/item/storage/belt/rogue/leather/black
 	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel/special = 1)
