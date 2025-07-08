@@ -23030,8 +23030,18 @@
 /area/rogue/under/town/sewer)
 "hBf" = (
 /obj/structure/table/wood/fancy/black,
-/obj/item/rogueweapon/sword/long/blackflamb,
-/obj/item/storage/belt/rogue/pouch/coins/rich,
+/obj/item/rogueweapon/sword/long/blackflamb{
+	pixel_x = -10;
+	pixel_y = -11
+	},
+/obj/item/storage/belt/rogue/pouch/coins/rich{
+	pixel_x = 7;
+	pixel_y = 0
+	},
+/obj/item/reagent_containers/glass/bottle/rogue/beer/komuchisake{
+	pixel_x = -7;
+	pixel_y = 11
+	},
 /turf/open/floor/rogue/carpet/lord/center,
 /area/rogue/under/cave/licharena)
 "hBi" = (
