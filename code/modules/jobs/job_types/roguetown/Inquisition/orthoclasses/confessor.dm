@@ -39,7 +39,12 @@
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	mask = /obj/item/clothing/mask/rogue/facemask/psydonmask
 	head = /obj/item/clothing/head/roguetown/roguehood/psydon
-	backpack_contents = list(/obj/item/roguekey/inquisition = 1, /obj/item/lockpickring/mundane = 1, /obj/item/rogueweapon/huntingknife/idagger/silver/psydagger, /obj/item/grapplinghook = 1)
+	backpack_contents = list(
+		/obj/item/roguekey/inquisition = 1,
+		/obj/item/lockpickring/mundane = 1,
+		/obj/item/rogueweapon/huntingknife/idagger/silver/psydagger,
+		/obj/item/grapplinghook = 1,
+		)
 	H.change_stat("strength", -1) // weasel
 	H.change_stat("endurance", 3)
 	H.change_stat("perception", 2)
