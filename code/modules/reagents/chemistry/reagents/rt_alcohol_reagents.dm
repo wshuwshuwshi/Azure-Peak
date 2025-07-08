@@ -558,6 +558,7 @@
 	boozepwr = 80 // THE END OF THE FUCKING WORLD.  
 	taste_description = "a green numbness, then a burning vigor in the heart" // heartburn (healing)
 	color = "#86cca3"
+	quality = DRINK_VERYGOOD // good stuff!
 
 /datum/reagent/consumable/ethanol/luxwine/on_mob_life(mob/living/carbon/M) // stolen healthpot code. i am shameless.
 	if(volume > 0.99) // i have no clue if this works.
