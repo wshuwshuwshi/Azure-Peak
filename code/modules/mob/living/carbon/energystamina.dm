@@ -1,7 +1,13 @@
 /mob/living/proc/update_stamina() //update hud and regen after last_fatigued delay on taking
 	max_stamina = max_energy / 10
 
-	var/delay = (HAS_TRAIT(src, TRAIT_APRICITY) && GLOB.tod == "day") ? 13 : 20		//Astrata 
+	var/delay = 20
+	if(HAS_TRAIT(src, TRAIT_APRICITY)) 
+		switch(GLOB.tod) 
+			if("day", "dawn") 
+				delay = 13 
+			if("night", "dusk")
+				delay = 16
 	if(world.time > last_fatigued + delay) //regen fatigue
 		var/added = energy / max_energy
 		added = round(-10 + (added * - 40))
