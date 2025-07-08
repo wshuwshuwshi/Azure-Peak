@@ -98,7 +98,7 @@
 	needed_items = list(/obj/item/alch/atropa = 1, /obj/item/reagent_containers/food/snacks/sugar = 1, /obj/item/alch/matricaria = 1,
 						 /obj/item/alch/paris = 1, /obj/item/rogueweapon/whip = 1) // poisonous herbs, sugar, and an actual whip. the power of Mistranslations...
 	brewed_amount = 6
-	brew_time = 1 MINUTES // DEBUG, SET BACK TO 5.
+	brew_time = 5 MINUTES
 	sell_value = 30
 
 /datum/brewing_recipe/luxintenebre
@@ -111,5 +111,5 @@
 	needed_items = list(/obj/item/reagent_containers/lux = 1, /obj/item/reagent_containers/food/snacks/sugar = 2,
 						 /obj/item/alch/calendula = 1) // a single lux, sugar, and a healing herb. seems fair 2 me.
 	brewed_amount = 2 // should make 2 bottles
-	brew_time = 1 MINUTES // DEBUG, SET BACK TO 5.
+	brew_time = 5 MINUTES
 	sell_value = 80 // this shits heretical and has a high black market value
