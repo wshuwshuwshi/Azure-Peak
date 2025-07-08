@@ -527,7 +527,7 @@
 	name = "Wild Revival"
 	//Herbs that have to do with intelligence mostly. Easier to remember.
 	required_items = list(
-		/obj/item/reagent_containers/food/snacks/rogue/meat = 3,
+		/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 3,
 		/obj/item/alch/mentha = 3,
 		/obj/item/reagent_containers/food/snacks/grown/rogue/swampweed = 3
 	)
