@@ -52,18 +52,18 @@
 			to_chat(user, span_warning("I need a holy [initial(temp_structure.name)] near [target]."))
 			revert_cast()
 			return FALSE
-		// if(!target.mind)
-		// 	to_chat(user, "This one is inert.")
-		// 	revert_cast()
-		// 	return FALSE
+		if(!target.mind)
+			to_chat(user, "This one is inert.")
+			revert_cast()
+			return FALSE
 		if(HAS_TRAIT(target, TRAIT_NECRAS_VOW))
 			to_chat(user, "This one has pledged themselves whole to Necra. They are Hers.")
 			revert_cast()
 			return FALSE
-		// if(!target.mind.active)
-		// 	to_chat(user, "Necra is not done with [target], yet.")
-		// 	revert_cast()
-		// 	return FALSE
+		if(!target.mind.active)
+			to_chat(user, "Necra is not done with [target], yet.")
+			revert_cast()
+			return FALSE
 		if(target == user)
 			revert_cast()
 			return FALSE
@@ -170,6 +170,7 @@
 	debuff_type = /datum/status_effect/debuff/dreamfiend_curse
 	//This will be Abyssor's statue soon.
 	required_structure = /turf/open/water/ocean
+	overlay_state = "terrors"
 
 /datum/status_effect/debuff/dreamfiend_curse
 	id = "dreamfiend_curse"
@@ -223,7 +224,7 @@
 /obj/effect/proc_holder/spell/invoked/summon_dreamfiend_curse
 	name = "Confront Terror"
 	desc = "Summon the dreamfiend haunting you to confront it directly"
-	//overlay_state = "dreamfiend"
+	overlay_state = "terrors"
 	chargetime = 0
 	invocation = "Face me daemon!"
 	invocation_type = "shout"
@@ -261,6 +262,7 @@
 	required_items = list(
 		/obj/item/reagent_containers/lux = 1
 	)
+	overlay_state = "pestra_revive"
 
 /obj/effect/proc_holder/spell/invoked/resurrect/eora
 	//Does heartfelt even exist?
@@ -270,6 +272,7 @@
 	)
 	debuff_type = /datum/status_effect/debuff/metabolic_acceleration
 	sound = 'sound/magic/heartbeat.ogg'
+	overlay_state = "eora_revive"
 
 /atom/movable/screen/alert/status_effect/nutrition_drain
 	name = "Metabolic Acceleration"
@@ -447,6 +450,7 @@
 
 /datum/status_effect/debuff/noc_revival
 	id = "noc_revival"
+	overlay_state = "noc_revive"
 	sound = 'sound/magic/owlhoot.ogg'
 	duration = 15 MINUTES
 	alert_type = /atom/movable/screen/alert/status_effect/noc_revival
@@ -532,6 +536,7 @@
 		/obj/item/reagent_containers/food/snacks/grown/rogue/swampweed = 3
 	)
 	debuff_type = /datum/status_effect/debuff/dendor_revival
+	required_structure = /obj/structure/flora/roguetree/wise
 
 /obj/effect/proc_holder/spell/invoked/resurrect/noc
 	name = "Moonlit Revival"
