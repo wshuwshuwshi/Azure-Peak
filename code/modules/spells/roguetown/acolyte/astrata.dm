@@ -8,7 +8,7 @@
 	antimagic_allowed = TRUE
 	recharge_time = 25 SECONDS
 	miracle = TRUE
-	devotion_cost = 80
+	devotion_cost = 40
 	projectile_type = /obj/projectile/magic/lightning/astratablast
 
 /obj/projectile/magic/lightning/astratablast
