@@ -505,7 +505,6 @@
 	name = "Noc's Moonlit Curse"
 	desc = "Your mind feels clouded and moonlight burns your skin."
 	icon_state = "noc_curse"
-	sound = 'sound/magic/owlhoot.ogg'
 
 /obj/effect/proc_holder/spell/invoked/resurrect/malum
 	name = "Diligent Revival"
