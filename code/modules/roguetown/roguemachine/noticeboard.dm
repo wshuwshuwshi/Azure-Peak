@@ -2,7 +2,7 @@
 	name = "Notice Board"
 	desc = "A large wooden notice board, carrying postings from all across Azurea. A ZAD perch sits atop it."
 	icon = 'icons/roguetown/misc/64x64.dmi'
-	icon_state = "noticeboard"
+	icon_state = "noticeboard3"
 	density = TRUE
 	anchored = TRUE
 	max_integrity = 0
