@@ -307,7 +307,7 @@
 	return ..()
 
 /obj/effect/proc_holder/spell/invoked/resurrect/xylix
-	//Cheap, but wildly unpretictable with possible far worse effects than other methods.
+	//Cheap, but wildly unpretictable with possibly far worse effects than other methods.
 	name = "Anastasis?"
 	debuff_type = /datum/status_effect/debuff/random_revival
 
@@ -324,9 +324,9 @@
 	else
 		// 90% chance for normal debuff
 		apply_random_debuff()
-		if(prob(50))
+		if(prob(33))
 			apply_random_debuff()
-		if(prob(25))
+		if(prob(20))
 			apply_random_debuff()
 
 	return TRUE
@@ -363,7 +363,6 @@
 		if(!length(area_turfs))
 			break
 
-		// Filter valid turfs (non-dense, not restricted)
 		var/list/valid_turfs = list()
 		for(var/turf/T in area_turfs)
 			if(T.density)
@@ -399,7 +398,6 @@
 	id = "malum_revival"
 	duration = 15 MINUTES
 	alert_type = /atom/movable/screen/alert/status_effect/malum_revival
-	sound = 'sound/magic/clang.ogg'
 
 /datum/status_effect/debuff/malum_revival/on_creation(mob/living/new_owner)
 	effectedstats = list(
@@ -434,7 +432,6 @@
 	id = "dendor_revival"
 	duration = 15 MINUTES
 	alert_type = /atom/movable/screen/alert/status_effect/dendor_revival
-	sound = 'sound/magic/birdsong.ogg'
 
 /datum/status_effect/debuff/dendor_revival/on_creation(mob/living/new_owner)
 	effectedstats = list(
@@ -450,8 +447,6 @@
 
 /datum/status_effect/debuff/noc_revival
 	id = "noc_revival"
-	overlay_state = "noc_revive"
-	sound = 'sound/magic/owlhoot.ogg'
 	duration = 15 MINUTES
 	alert_type = /atom/movable/screen/alert/status_effect/noc_revival
 	tick_interval = 10 SECONDS
@@ -510,6 +505,7 @@
 	name = "Noc's Moonlit Curse"
 	desc = "Your mind feels clouded and moonlight burns your skin."
 	icon_state = "noc_curse"
+	sound = 'sound/magic/owlhoot.ogg'
 
 /obj/effect/proc_holder/spell/invoked/resurrect/malum
 	name = "Diligent Revival"
@@ -517,6 +513,7 @@
 		/obj/item/ingot/iron = 3
 	)
 	debuff_type = /datum/status_effect/debuff/malum_revival
+	sound = 'sound/magic/clang.ogg'
 
 /obj/effect/proc_holder/spell/invoked/resurrect/ravox
 	name = "Just Revival"
@@ -537,6 +534,7 @@
 	)
 	debuff_type = /datum/status_effect/debuff/dendor_revival
 	required_structure = /obj/structure/flora/roguetree/wise
+	sound = 'sound/magic/birdsong.ogg'
 
 /obj/effect/proc_holder/spell/invoked/resurrect/noc
 	name = "Moonlit Revival"
@@ -544,3 +542,5 @@
 		/obj/item/paper/scroll = 15
 	)
 	debuff_type = /datum/status_effect/debuff/noc_revival
+	overlay_state = "noc_revive"
+	sound = 'sound/magic/owlhoot.ogg'
