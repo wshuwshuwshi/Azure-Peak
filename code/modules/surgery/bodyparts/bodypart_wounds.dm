@@ -29,6 +29,9 @@
 /obj/item/bodypart/proc/get_sewable_wounds()
 	var/list/woundies = list()
 	for(var/datum/wound/wound as anything in wounds)
+		if(wound == null)
+			listclearnulls(wounds) //Putting this somewhere useful but low intensity
+			continue
 		if(!wound.can_sew)
 			continue
 		woundies += wound
