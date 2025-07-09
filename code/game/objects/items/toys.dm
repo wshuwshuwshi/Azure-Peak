@@ -446,7 +446,7 @@
 		cards += "Ace of [suit]"
 		for(var/i in 2 to 10)
 			cards += "[i] of [suit]"
-		for(var/person in list("Ace", "Page", "Knight", "Queen", "King"))
+		for(var/person in list("Page", "Knight", "Queen", "King"))
 			cards += "[person] of [suit]"
 	for(var/trump in list("The Magician", "The High Priestess", "The Empress", "The Emperor", "The Hierophant", "The Lover", "The Chariot", "Justice", "The Hermit", "The Wheel of Fortune", "Strength", "The Hanged Man", "Death", "Temperance", "The Devil", "The Tower", "The Star", "The Moon", "The Sun", "Judgement", "The World", "The Fool"))
 		cards += trump
