@@ -77,3 +77,10 @@
 	result = /obj/item/storage/belt/rogue/leather/knifebelt
 	reqs = list(/obj/item/natural/hide/cured = 2,
 				/obj/item/natural/fibers = 2)
+
+/datum/crafting_recipe/roguetown/leather/container/belt/surgicalbag
+	name = "surgeon's bag (2 leather, 1 fiber)"
+	result = list(/obj/item/storage/belt/rogue/surgery_bag/empty)
+	reqs = list(/obj/item/natural/hide/cured = 2,
+				/obj/item/natural/fibers = 1)
+	craftdiff = 3
