@@ -26,6 +26,8 @@
 		/datum/crafting_recipe/roguetown/survival/quarterstaff,
 		/datum/crafting_recipe/roguetown/survival/recurvepartial,
 		/datum/crafting_recipe/roguetown/survival/longbowpartial,
+		/datum/crafting_recipe/oar,
+		/datum/crafting_recipe/boat,
 		)
 
 	AddElement(
@@ -260,6 +262,7 @@
 		/datum/crafting_recipe/roguetown/survival/torch,
 		/datum/crafting_recipe/roguetown/survival/stonearrow,
 		/datum/crafting_recipe/roguetown/survival/stonearrow_five,
+		/datum/crafting_recipe/roguetown/survival/wood_stake
 		)
 
 	AddElement(

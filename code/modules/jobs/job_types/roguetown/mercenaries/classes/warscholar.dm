@@ -94,7 +94,11 @@
 			armor = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/hierophant
 			shirt = /obj/item/clothing/suit/roguetown/shirt/robe/hierophant
 			pants = /obj/item/clothing/under/roguetown/trou/leather
-			backpack_contents = list(/obj/item/roguekey/mercenary, /obj/item/rogueweapon/huntingknife/idagger, /obj/item/spellbook_unfinished/pre_arcyne)
+			backpack_contents = list(
+				/obj/item/roguekey/mercenary,
+				/obj/item/rogueweapon/huntingknife/idagger,
+				/obj/item/spellbook_unfinished/pre_arcyne,
+				)
 
 		if("Pontifex")
 			H.set_blindness(0)

@@ -32,7 +32,12 @@
 	belt = /obj/item/storage/belt/rogue/leather/rope
 	beltr = /obj/item/storage/keyring/soilson
 	backr = /obj/item/storage/backpack/rogue/satchel
-	backpack_contents = list(/obj/item/recipe_book/survival = 1, /obj/item/flashlight/flare/torch = 1, /obj/item/rogueweapon/huntingknife = 1, /obj/item/flint = 1)
+	backpack_contents = list(
+		/obj/item/recipe_book/survival = 1,
+		/obj/item/flashlight/flare/torch = 1,
+		/obj/item/rogueweapon/huntingknife = 1,
+		/obj/item/flint = 1,
+		)
 	H.adjust_skillrank(/datum/skill/combat/whipsflails, 1, TRUE)
 	H.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 	H.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)

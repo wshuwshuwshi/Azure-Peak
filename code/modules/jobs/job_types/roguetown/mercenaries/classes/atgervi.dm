@@ -109,7 +109,10 @@
 			H.cmode_music = 'sound/music/combat_shaman2.ogg'
 
 	H.grant_language(/datum/language/gronnic)
-	backpack_contents = list(/obj/item/roguekey/mercenary, /obj/item/rogueweapon/huntingknife)
+	backpack_contents = list(
+		/obj/item/roguekey/mercenary,
+		/obj/item/rogueweapon/huntingknife,
+		)
 
 
 /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/atgervi

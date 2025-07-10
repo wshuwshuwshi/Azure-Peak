@@ -22,7 +22,7 @@
 			to_chat(H, span_warning("You are a foreign swordsman, carrying nothing but your sword and your skill."))
 			head = /obj/item/clothing/head/roguetown/mentorhat
 			gloves = /obj/item/clothing/gloves/roguetown/eastgloves1
-			pants = /obj/item/clothing/under/roguetown/trou/eastpants1
+			pants = /obj/item/clothing/under/roguetown/heavy_leather_pants/eastpants1
 			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/eastshirt1
 			armor = /obj/item/clothing/suit/roguetown/armor/basiceast
 			shoes = /obj/item/clothing/shoes/roguetown/boots
@@ -40,7 +40,10 @@
 			H.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
 			H.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 			H.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE) 			//this shouldn't be enough to allow them to craft shit, rather just repair their prone-to-break armor
-			backpack_contents = list(/obj/item/recipe_book/survival = 1, /obj/item/flashlight/flare/torch/lantern)
+			backpack_contents = list(
+				/obj/item/recipe_book/survival = 1,
+				/obj/item/flashlight/flare/torch/lantern,
+				)
 			H.change_stat("strength", 2)
 			H.change_stat("endurance", 1)
 			H.change_stat("constitution", 2)
@@ -51,7 +54,7 @@
 			to_chat(H, span_warning("You are an ex-guardian, whenever that be for a petty noble, or a small shrine. You excel in defense with quarterstaffs, or have taken up the Naginata's offensive martial capabilities."))
 			head = /obj/item/clothing/head/roguetown/mentorhat
 			gloves = /obj/item/clothing/gloves/roguetown/eastgloves1
-			pants = /obj/item/clothing/under/roguetown/trou/eastpants1
+			pants = /obj/item/clothing/under/roguetown/heavy_leather_pants/eastpants1
 			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/eastshirt2
 			armor = /obj/item/clothing/suit/roguetown/armor/basiceast/mentorsuit
 			shoes = /obj/item/clothing/shoes/roguetown/boots
