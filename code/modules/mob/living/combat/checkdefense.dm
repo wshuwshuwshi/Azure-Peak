@@ -19,7 +19,7 @@
 
 	switch(d_intent)
 		if(INTENT_PARRY)
-			attempt_parry(intenty, user)
+			return attempt_parry(intenty, user)
 		if(INTENT_DODGE)
-			attempt_dodge(intenty, user)
+			return attempt_dodge(intenty, user)
 			
