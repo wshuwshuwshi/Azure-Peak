@@ -562,6 +562,11 @@
 	resistance_flags = FIRE_PROOF
 	dropshrink = 0.5
 
+/obj/item/clothing/neck/roguetown/collar/forlorn
+	name = "light forlorn collar"
+	desc = "A old reminder. A lighter version often used more as a status symbol for slaves. Then and now."
+	icon_state = "iwolfcollaralt"
+
 /obj/item/clothing/neck/roguetown/collar/bell_collar
 	name = "bell collar"
 	desc = "A band of leather with a bell that protects the local zads from the local catfolk."
