@@ -85,3 +85,30 @@
 	name = "Signet"
 	cost = 220
 	contains = list(/obj/item/clothing/ring/signet)
+
+/datum/supply_pack/rogue/luxury/obsidianfragment
+	name = "Obsidian Fragments"
+	cost = 55
+	contains = list(	
+			/obj/item/magic/obsidian,
+			/obj/item/magic/obsidian,
+			/obj/item/magic/obsidian,
+			)
+
+/datum/supply_pack/rogue/luxury/manaflower
+	name = "Manabloom Flowers"
+	cost = 55
+	contains = list(	
+			/obj/item/reagent_containers/food/snacks/grown/manabloom,
+			/obj/item/reagent_containers/food/snacks/grown/manabloom,
+			/obj/item/reagent_containers/food/snacks/grown/manabloom,
+			)
+
+/datum/supply_pack/rogue/luxury/manacrystal
+	name = "Mana Crystals"
+	cost = 55
+	contains = list(	
+			/obj/item/magic/manacrystal,
+			/obj/item/magic/manacrystal,
+			/obj/item/magic/manacrystal,
+			)

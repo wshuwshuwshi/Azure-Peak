@@ -18,7 +18,7 @@
 	backl = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve
 	belt = /obj/item/storage/belt/rogue/leather
 	beltr = /obj/item/quiver/arrows
-	beltl = /obj/item/rogueweapon/sword/iron/messer
+	beltl = /obj/item/storage/meatbag
 	backpack_contents = list(
 						/obj/item/flint = 1,
 						/obj/item/bait = 1,
