@@ -11,6 +11,24 @@
 	sellprice = 6
 	craftdiff = 0
 
+/datum/crafting_recipe/roguetown/leather/container/magepouch
+	name = "summoner's pouch"
+	reqs = list(
+		/obj/item/natural/hide/cured = 2,
+		/obj/item/natural/fibers = 1,
+	)
+	result = /obj/item/storage/magebag
+	craftdiff = 1
+
+/datum/crafting_recipe/roguetown/leather/container/meatbag
+	name = "game satchel"
+	reqs = list(
+		/obj/item/natural/hide/cured = 2,
+		/obj/item/natural/cloth = 1,
+	)
+	result = /obj/item/storage/meatbag
+	craftdiff = 1
+
 /datum/crafting_recipe/roguetown/leather/container/satchel
 	name = "satchel (1 fibers, 2 leather)"
 	result = /obj/item/storage/backpack/rogue/satchel
@@ -77,3 +95,10 @@
 	result = /obj/item/storage/belt/rogue/leather/knifebelt
 	reqs = list(/obj/item/natural/hide/cured = 2,
 				/obj/item/natural/fibers = 2)
+
+/datum/crafting_recipe/roguetown/leather/container/belt/surgicalbag
+	name = "surgeon's bag (2 leather, 1 fiber)"
+	result = list(/obj/item/storage/belt/rogue/surgery_bag/empty)
+	reqs = list(/obj/item/natural/hide/cured = 2,
+				/obj/item/natural/fibers = 1)
+	craftdiff = 3

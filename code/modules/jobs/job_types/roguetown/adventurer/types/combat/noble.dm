@@ -94,7 +94,10 @@
 			belt = /obj/item/storage/belt/rogue/leather/steel/tasset
 			backl = /obj/item/storage/backpack/rogue/satchel
 			beltl = /obj/item/flashlight/flare/torch/lantern
-			backpack_contents = list(/obj/item/storage/belt/rogue/pouch/coins/poor = 1, /obj/item/recipe_book/survival = 1)
+			backpack_contents = list(
+				/obj/item/storage/belt/rogue/pouch/coins/poor = 1,
+				/obj/item/recipe_book/survival = 1,
+				)
 			H.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE)
 			H.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE)
 			H.adjust_skillrank(/datum/skill/combat/maces, 2, TRUE)

@@ -131,7 +131,10 @@
 		armor = /obj/item/clothing/suit/roguetown/armor/armordress/winterdress
 	if(should_wear_masc_clothes(H))
 		armor = /obj/item/clothing/suit/roguetown/armor/longcoat
-	backpack_contents = list(/obj/item/reagent_containers/glass/bottle/rogue/poison = 1, /obj/item/lockpick = 1)
+	backpack_contents = list(
+		/obj/item/reagent_containers/glass/bottle/rogue/poison = 1,
+		/obj/item/lockpick = 1,
+		)
 	if(H.mind)
 		var/datum/antagonist/new_antag = new /datum/antagonist/suitor()
 		H.mind.add_antag_datum(new_antag)

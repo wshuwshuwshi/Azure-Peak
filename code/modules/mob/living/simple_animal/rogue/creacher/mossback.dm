@@ -56,9 +56,9 @@
 	AddElement(/datum/element/ai_retaliate)
 	ai_controller.set_blackboard_key(BB_BASIC_FOODS, food_type)
 	if(user)
-		summoner = user.name
+		summoner = user.mind.current.real_name
 		if (townercrab)
-			faction = list("neutral")
+			faction = list("neutral", "[summoner]_faction")
 			tamed(user)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/mossback/get_sound(input)

@@ -129,6 +129,7 @@
 	trash = /obj/item/trash/applecore
 	faretype = FARE_POOR
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	bloody_icon = 'icons/effects/blood64.dmi'
 	slot_flags = ITEM_SLOT_HEAD
 	worn_x_dimension = 64
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3)

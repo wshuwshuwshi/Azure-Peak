@@ -15,7 +15,11 @@
 	beltr = /obj/item/rogueweapon/sword/sabre/mulyeog/rumacaptain
 	beltl = /obj/item/scabbard/rumacaptain
 	backr = /obj/item/storage/backpack/rogue/satchel
-	backpack_contents = list(/obj/item/roguekey/mercenary, /obj/item/flashlight/flare/torch, /obj/item/flashlight/flare/torch/lantern)
+	backpack_contents = list(
+		/obj/item/roguekey/mercenary,
+		/obj/item/flashlight/flare/torch,
+		/obj/item/flashlight/flare/torch/lantern,
+		)
 	H.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
 	H.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
 	H.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
@@ -36,7 +40,7 @@
 	if(should_wear_masc_clothes(H))
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/eastshirt1
 		cloak = /obj/item/clothing/cloak/eastcloak1
-		pants = /obj/item/clothing/under/roguetown/trou/eastpants1
+		pants = /obj/item/clothing/under/roguetown/heavy_leather_pants/eastpants1
 		gloves = /obj/item/clothing/gloves/roguetown/eastgloves2
 		armor = /obj/item/clothing/suit/roguetown/shirt/undershirt/easttats
 		shoes = /obj/item/clothing/shoes/roguetown/boots

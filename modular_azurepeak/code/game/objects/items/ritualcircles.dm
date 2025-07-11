@@ -548,11 +548,11 @@ var/forgerites = list("Ritual of Blessed Reforgance")
 			if(!target)
 				return
 			if(do_after(user, 50))
-				user.say("Motive force, oh, violence!!")
+				user.say("MOTIVE FORCE, OH VIOLENCE!!")
 				if(do_after(user, 50))
-					user.say("A gorgeous buffet of violence, for you, for you!!")
+					user.say("A GORGEOUS FEAST OF VIOLENCE, FOR YOU, FOR YOU!!")
 					if(do_after(user, 50))
-						user.say("A slaughter awaits!!")
+						user.say("A SLAUGHTER AWAITS!!") // see the numbers taste the violence
 						if(do_after(user, 50))
 							//icon_state = "graggar_active" when we have one
 							user.apply_status_effect(/datum/status_effect/debuff/ritesexpended)

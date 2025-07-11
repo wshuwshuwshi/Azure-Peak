@@ -70,7 +70,7 @@
 
 /datum/patron/divine/abyssor
 	name = "Abyssor"
-	domain = "God of the Ocean, Storms and the Tide"
+	domain = "The great dreamer, primordial father of the tides. The ancient one, the most warped and potent of the ten."
 	desc = "The strongest of the Ten; when awakened, the world flooded for a thousand daes and a thousand nights before he was put to slumber. Resting fitfully did Dendor split from his skull like a gaping wound. Communes rarely with his followers, only offering glimpses in dreams. Gifted primordial Man water. "
 	worshippers = "Men of the Sea, Primitive Aquatics"
 	mob_traits = list(TRAIT_ABYSSOR_SWIM, TRAIT_SEA_DRINKER)
@@ -199,6 +199,7 @@
 	miracles = list(/obj/effect/proc_holder/spell/targeted/touch/orison			= CLERIC_ORI,
 					/obj/effect/proc_holder/spell/invoked/malum_flame_rogue 	= CLERIC_T0,
 					/obj/effect/proc_holder/spell/invoked/lesser_heal 			= CLERIC_T1,
+					/obj/effect/proc_holder/spell/invoked/conjure_tool			= CLERIC_T1,
 					/obj/effect/proc_holder/spell/invoked/vigorousexchange		= CLERIC_T1,
 					/obj/effect/proc_holder/spell/invoked/heatmetal				= CLERIC_T2,
 					/obj/effect/proc_holder/spell/invoked/hammerfall			= CLERIC_T3,
