@@ -392,6 +392,10 @@ GLOBAL_LIST_EMPTY(loadout_items)
 	name = "Collar"
 	path = /obj/item/clothing/neck/roguetown/collar
 
+/datum/loadout_item/forlon_collar
+	name = "Light Forlorn Collar"
+	path = /obj/item/clothing/neck/roguetown/collar/forlorn
+
 /datum/loadout_item/bell_collar
 	name = "Bell Collar"
 	path = /obj/item/clothing/neck/roguetown/collar/bell_collar
