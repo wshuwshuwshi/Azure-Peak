@@ -71,6 +71,7 @@
 			revert_cast()
 			return FALSE
 		if(target == user)
+			to_chat(user, "By focusing divine energies on myself, I can summise I have every component I need where I'm standing.")
 			revert_cast()
 			return FALSE
 		if(target.stat < DEAD)
