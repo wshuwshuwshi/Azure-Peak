@@ -124,7 +124,7 @@
 						)
 					belt = /obj/item/storage/belt/rogue/leather/knifebelt/black/kazengun
 					gloves = /obj/item/clothing/gloves/roguetown/eastgloves1
-					pants = /obj/item/clothing/under/roguetown/heavy_leather_pants/eastpants1
+					pants = /obj/item/clothing/under/roguetown/trou/leather/eastern
 					shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/eastshirt1
 					cloak = /obj/item/clothing/cloak/thief_cloak
 					head = /obj/item/clothing/head/roguetown/mentorhat //other armor pieces are nerfed to justify this
