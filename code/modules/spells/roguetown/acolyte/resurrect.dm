@@ -29,6 +29,12 @@
 	if(isliving(targets[1]))
 		var/mob/living/target = targets[1]
 
+		var/validation_result = validate_items(target)
+		if(validation_result != "")
+			to_chat(user, span_warning("[validation_result] on the floor next to or on top of [target]"))
+			revert_cast()
+			return FALSE
+
 		var/found_structure = FALSE
 		var/list/search_area = oview(structure_range, target)
 
@@ -69,11 +75,6 @@
 			return FALSE
 		if(target.stat < DEAD)
 			to_chat(user, span_warning("Nothing happens."))
-			revert_cast()
-			return FALSE
-		var/validation_result = validate_items(target)
-		if(validation_result != "")
-			to_chat(user, span_warning("[validation_result]"))
 			revert_cast()
 			return FALSE
 		if(target.mob_biotypes & MOB_UNDEAD && harms_undead) //positive energy harms the undead
