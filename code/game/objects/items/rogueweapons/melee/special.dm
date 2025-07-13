@@ -301,7 +301,6 @@
 	smeltresult = /obj/item/ingot/steel
 	grid_width = 64
 	grid_height = 32
-	intdamage_factor = 1.2
 
 /obj/item/rogueweapon/knuckles/getonmobprop(tag)
 	. = ..()
@@ -329,12 +328,11 @@
 	swingsound = list('sound/combat/wooshes/punch/punchwoosh (1).ogg','sound/combat/wooshes/punch/punchwoosh (2).ogg','sound/combat/wooshes/punch/punchwoosh (3).ogg')
 	associated_skill = /datum/skill/combat/unarmed
 	throwforce = 12
-	wdefense = 10	//literally no clue how else to balance these
+	wdefense = 7
 	wbalance = WBALANCE_HEAVY
 	blade_dulling = DULLING_SHAFT_WOOD
 	anvilrepair = /datum/skill/craft/weaponsmithing
 	smeltresult = /obj/item/ingot/bronze
-	intdamage_factor = 1.30
 
 /datum/intent/knuckles
 	clickcd = 8
@@ -351,7 +349,6 @@
 	swingdelay = 0
 	icon_state = "inpunch"
 	item_d_type = "blunt"
-
 
 /datum/intent/knuckles/smash
 	name = "smash"

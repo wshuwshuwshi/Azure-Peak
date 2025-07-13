@@ -14,7 +14,7 @@
 	wlength = WLENGTH_SHORT
 	resistance_flags = FLAMMABLE
 	can_parry = TRUE
-	wdefense = 10
+	wdefense = 9		//This way it's basically a buckler-alt that uses shield skill.
 	parrysound = "parrywood"
 	attacked_sound = "parrywood"
 	max_integrity = 150
