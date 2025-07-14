@@ -49,6 +49,9 @@
 			damage += 20
 	if(ishuman(target))
 		var/mob/living/carbon/human/H = target
+		if(istype(H.patron, /datum/patron/divine))
+			if(H in GLOB.excommunicated_players)
+				damage += 20
 		if(istype(H.patron, /datum/patron/inhumen))
 			damage += 20
 		if(istype(H.patron, /datum/patron/old_god))
