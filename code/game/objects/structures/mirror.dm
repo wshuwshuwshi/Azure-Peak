@@ -37,7 +37,6 @@
 	if(obj_broken || !Adjacent(user))
 		return
 
-	var/should_update = FALSE
 	var/list/choices = list("hairstyle", "facial hairstyle", "accessory", "face detail", "tail", "tail color one", "tail color two", "hair color", "facial hair color", "eye color", "natural gradient", "natural gradient color", "dye gradient", "dye gradient color", "penis", "testicles", "breasts", "vagina", "breast size", "penis size", "testicle size")
 	var/chosen = input(user, "Change what?", "Appearance") as null|anything in choices
 	
@@ -81,7 +80,6 @@
 						head.remove_bodypart_feature(current_hair)
 						head.add_bodypart_feature(new_hair)
 						H.update_hair()
-						should_update = TRUE
 
 		if("hair color")
 			var/new_hair_color = color_pick_sanitized(user, "Choose your hair color", "Hair Color", H.hair_color)
@@ -115,7 +113,6 @@
 						H.update_body()
 						H.update_hair()
 						H.update_body_parts()
-						should_update = TRUE
 
 		if("facial hair color")
 			var/new_facial_hair_color = color_pick_sanitized(user, "Choose your facial hair color", "Facial Hair Color", H.facial_hair_color)
@@ -143,7 +140,6 @@
 						H.dna.update_ui_block(DNA_FACIAL_HAIR_COLOR_BLOCK)
 						head.remove_bodypart_feature(current_facial)
 						head.add_bodypart_feature(new_facial)
-						should_update = TRUE
 
 		if("eye color")
 			var/new_eye_color = color_pick_sanitized(user, "Choose your eye color", "Eye Color", H.eye_color)
@@ -158,7 +154,6 @@
 				H.dna.features["eye_color"] = new_eye_color
 				H.dna.update_ui_block(DNA_EYE_COLOR_BLOCK)
 				H.update_body_parts()
-				should_update = TRUE
 
 		if("natural gradient")
 			var/datum/customizer_choice/bodypart_feature/hair/head/humanoid/hair_choice = CUSTOMIZER_CHOICE(/datum/customizer_choice/bodypart_feature/hair/head/humanoid)
@@ -190,7 +185,6 @@
 						
 						head.remove_bodypart_feature(current_hair)
 						head.add_bodypart_feature(new_hair)
-						should_update = TRUE
 
 		if("natural gradient color")
 			var/new_gradient_color = color_pick_sanitized(user, "Choose your natural gradient color", "Natural Gradient Color", H.hair_color)
@@ -220,7 +214,6 @@
 						
 						head.remove_bodypart_feature(current_hair)
 						head.add_bodypart_feature(new_hair)
-						should_update = TRUE
 
 		if("dye gradient")
 			var/datum/customizer_choice/bodypart_feature/hair/head/humanoid/hair_choice = CUSTOMIZER_CHOICE(/datum/customizer_choice/bodypart_feature/hair/head/humanoid)
@@ -252,7 +245,6 @@
 						
 						head.remove_bodypart_feature(current_hair)
 						head.add_bodypart_feature(new_hair)
-						should_update = TRUE
 
 		if("dye gradient color")
 			var/new_gradient_color = color_pick_sanitized(user, "Choose your dye gradient color", "Dye Gradient Color", H.hair_color)
@@ -282,7 +274,6 @@
 						
 						head.remove_bodypart_feature(current_hair)
 						head.add_bodypart_feature(new_hair)
-						should_update = TRUE
 
 		if("facial hairstyle")
 			var/datum/customizer_choice/bodypart_feature/hair/facial/humanoid/facial_choice = CUSTOMIZER_CHOICE(/datum/customizer_choice/bodypart_feature/hair/facial/humanoid)
@@ -315,7 +306,6 @@
 						head.remove_bodypart_feature(current_facial)
 						head.add_bodypart_feature(new_facial)
 						H.update_hair()
-						should_update = TRUE
 
 		if("accessory")
 			var/datum/customizer_choice/bodypart_feature/accessory/accessory_choice = CUSTOMIZER_CHOICE(/datum/customizer_choice/bodypart_feature/accessory)
@@ -338,7 +328,6 @@
 						var/datum/bodypart_feature/accessory/accessory_feature = new()
 						accessory_feature.set_accessory_type(valid_accessories[new_style], H.hair_color, H)
 						head.add_bodypart_feature(accessory_feature)
-					should_update = TRUE
 
 		if("face detail")
 			var/datum/customizer_choice/bodypart_feature/face_detail/face_choice = CUSTOMIZER_CHOICE(/datum/customizer_choice/bodypart_feature/face_detail)
@@ -361,7 +350,6 @@
 						var/datum/bodypart_feature/face_detail/detail_feature = new()
 						detail_feature.set_accessory_type(valid_details[new_detail], H.hair_color, H)
 						head.add_bodypart_feature(detail_feature)
-					should_update = TRUE
 
 		if("penis")
 			var/list/valid_penis_types = list("none")
@@ -377,7 +365,6 @@
 						penis.Remove(H)
 						qdel(penis)
 						H.update_body()
-						should_update = TRUE
 				else
 					var/obj/item/organ/penis/penis = H.getorganslot(ORGAN_SLOT_PENIS)
 					if(!penis)
@@ -386,7 +373,6 @@
 					penis.accessory_type = valid_penis_types[new_style]
 					penis.color = H.dna.features["mcolor"]
 					H.update_body()
-					should_update = TRUE
 
 		if("testicles")
 			var/list/valid_testicle_types = list("none")
@@ -402,7 +388,6 @@
 						testicles.Remove(H)
 						qdel(testicles)
 						H.update_body()
-						should_update = TRUE
 				else
 					var/obj/item/organ/testicles/testicles = H.getorganslot(ORGAN_SLOT_TESTICLES)
 					if(!testicles)
@@ -411,7 +396,6 @@
 					testicles.accessory_type = valid_testicle_types[new_style]
 					testicles.color = H.dna.features["mcolor"]
 					H.update_body()
-					should_update = TRUE
 
 		if("breasts")
 			var/list/valid_breast_types = list("none")
@@ -428,7 +412,6 @@
 						breasts.Remove(H)
 						qdel(breasts)
 						H.update_body()
-						should_update = TRUE
 				else
 					var/obj/item/organ/breasts/breasts = H.getorganslot(ORGAN_SLOT_BREASTS)
 					if(!breasts)
@@ -438,7 +421,6 @@
 					breasts.accessory_type = valid_breast_types[new_style]
 					breasts.color = H.dna.features["mcolor"]
 					H.update_body()
-					should_update = TRUE
 
 		if("vagina")
 			var/list/valid_vagina_types = list("none", "human", "hairy", "spade", "furred", "gaping", "cloaca")
@@ -451,7 +433,6 @@
 						vagina.Remove(H)
 						qdel(vagina)
 						H.update_body()
-						should_update = TRUE
 				else
 					var/obj/item/organ/vagina/vagina = H.getorganslot(ORGAN_SLOT_VAGINA)
 					if(!vagina)
@@ -466,7 +447,6 @@
 						vagina.color = H.dna.features["mcolor"]
 						
 					H.update_body()
-					should_update = TRUE
 
 		if("breast size")
 			var/list/breast_sizes = list("flat", "very small", "small", "average", "large", "enormous")
@@ -491,7 +471,6 @@
 					
 					breasts.breast_size = size_num
 					H.update_body()
-					should_update = TRUE
 
 		if("penis size")
 			var/list/penis_sizes = list("small", "average", "large")
@@ -510,7 +489,6 @@
 					
 					penis.penis_size = size_num
 					H.update_body()
-					should_update = TRUE
 
 		if("testicle size")
 			var/list/testicle_sizes = list("small", "average", "large")
@@ -529,7 +507,6 @@
 					
 					testicles.ball_size = size_num
 					H.update_body()
-					should_update = TRUE
 
 		if("tail")
 			var/list/valid_tails = list("none")
@@ -545,7 +522,6 @@
 						tail.Remove(H)
 						qdel(tail)
 						H.update_body()
-						should_update = TRUE
 				else
 					var/obj/item/organ/tail/tail = H.getorganslot(ORGAN_SLOT_TAIL)
 					if(!tail)
@@ -555,7 +531,6 @@
 					var/datum/sprite_accessory/tail/tail_type = SPRITE_ACCESSORY(tail.accessory_type)
 					tail.accessory_colors = tail_type.get_default_colors(list())
 					H.update_body()
-					should_update = TRUE
 
 		if("tail color one")
 			var/obj/item/organ/tail/tail = H.getorganslot(ORGAN_SLOT_TAIL)
@@ -573,7 +548,6 @@
 					tail.Insert(H, TRUE, FALSE)
 					H.dna.features["tail_color"] = colors[1]  // Update DNA features
 					H.update_body()
-					should_update = TRUE
 			else
 				to_chat(user, span_warning("You don't have a tail!"))
 
@@ -593,14 +567,12 @@
 					tail.Insert(H, TRUE, FALSE)
 					H.dna.features["tail_color2"] = colors[2]  // Update DNA features
 					H.update_body()
-					should_update = TRUE
 			else
 				to_chat(user, span_warning("You don't have a tail!"))
 
-	if(should_update)
-		H.update_hair()
-		H.update_body()
-		H.update_body_parts()
+	H.update_hair()
+	H.update_body()
+	H.update_body_parts()
 
 /obj/structure/mirror/examine_status(mob/user)
 	if(obj_broken)
@@ -677,7 +649,6 @@
 		return
 
 	var/mob/living/carbon/human/H = user
-	var/should_update = FALSE
 
 	var/choice = input(user, "Something to change?", "Magical Grooming") as null|anything in list("name", "race", "gender", "hair", "eyes", "accessory", "face detail")
 
@@ -770,7 +741,6 @@
 				H.dna.features["eye_color"] = new_eye_color
 				H.dna.update_ui_block(DNA_EYE_COLOR_BLOCK)
 				H.update_body_parts()
-				should_update = TRUE
 
 		if("accessory")
 			var/datum/customizer_choice/bodypart_feature/accessory/accessory_choice = CUSTOMIZER_CHOICE(/datum/customizer_choice/bodypart_feature/accessory)
@@ -793,7 +763,6 @@
 						var/datum/bodypart_feature/accessory/accessory_feature = new()
 						accessory_feature.set_accessory_type(valid_accessories[new_style], H.hair_color, H)
 						head.add_bodypart_feature(accessory_feature)
-					should_update = TRUE
 
 		if("face detail")
 			var/datum/customizer_choice/bodypart_feature/face_detail/face_choice = CUSTOMIZER_CHOICE(/datum/customizer_choice/bodypart_feature/face_detail)
@@ -816,10 +785,10 @@
 						var/datum/bodypart_feature/face_detail/detail_feature = new()
 						detail_feature.set_accessory_type(valid_details[new_detail], H.hair_color, H)
 						head.add_bodypart_feature(detail_feature)
-					should_update = TRUE
 
-	if(should_update)
-		H.update_body()
+	H.update_hair()
+	H.update_body()
+	H.update_body_parts()
 
 /obj/structure/mirror/magic/proc/curse(mob/living/user)
 	return
