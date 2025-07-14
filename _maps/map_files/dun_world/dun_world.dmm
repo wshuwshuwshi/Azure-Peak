@@ -8869,12 +8869,6 @@
 /obj/item/rogueweapon/shield/buckler,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors)
-"cQL" = (
-/obj/structure/stairs{
-	dir = 1
-	},
-/turf/closed,
-/area/rogue/outdoors/town)
 "cQP" = (
 /obj/machinery/light/rogue/campfire/densefire{
 	fueluse = 1.8e+06
@@ -262681,7 +262675,7 @@ sns
 sns
 sns
 exD
-cQL
+jTP
 bge
 taS
 owJ
@@ -263133,7 +263127,7 @@ sns
 sns
 sns
 exD
-cQL
+jTP
 bge
 scj
 gPi
