@@ -26888,6 +26888,16 @@
 	},
 /turf/open/floor/rogue/tile/bath,
 /area/rogue/under/town/basement/keep)
+"iCm" = (
+/obj/structure/fluff/railing/border{
+	dir = 10
+	},
+/obj/machinery/gear_painter{
+	pixel_x = 4;
+	pixel_y = 0
+	},
+/turf/open/floor/rogue/cobblerock,
+/area/rogue/outdoors/town)
 "iCo" = (
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
@@ -52341,6 +52351,10 @@
 	},
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/outdoors/mountains/decap/gunduzirak)
+"qHH" = (
+/obj/item/roguecoin/copper,
+/turf/open/water/cleanshallow,
+/area/rogue/outdoors/town)
 "qHL" = (
 /obj/structure/bars/pipe{
 	dir = 8
@@ -263578,7 +263592,7 @@ hKL
 sns
 ehB
 sns
-uwY
+iCm
 tXc
 sMd
 taS
@@ -267198,7 +267212,7 @@ sns
 dQI
 dQI
 dQI
-sns
+nvQ
 vOG
 eNb
 lRG
@@ -267654,7 +267668,7 @@ sns
 vOG
 pHl
 hvv
-hvv
+qHH
 qjX
 sns
 vAX
@@ -268557,8 +268571,8 @@ fpx
 nJH
 vOG
 pHl
-hvv
-hvv
+qHH
+yap
 qjX
 sns
 aWT
