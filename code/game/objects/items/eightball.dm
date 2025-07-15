@@ -97,18 +97,19 @@
 /obj/item/toy/eightball/haunted
 	shake_time = 150
 	cooldown_time = 1800
-	flags_1 = HEAR_1
 	var/last_message
 	var/selected_message
 	var/list/votes
 
 /obj/item/toy/eightball/haunted/Initialize(mapload)
 	. = ..()
+	become_hearing_sensitive()
 	votes = list()
 	GLOB.poi_list |= src
 
 /obj/item/toy/eightball/haunted/Destroy()
 	GLOB.poi_list -= src
+	lose_hearing_sensitivity()
 	. = ..()
 
 /obj/item/toy/eightball/haunted/MakeHaunted()
