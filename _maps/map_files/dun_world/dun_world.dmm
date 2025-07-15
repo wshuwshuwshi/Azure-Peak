@@ -25207,10 +25207,6 @@
 /obj/item/rogueore/silver,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/outdoors/mountains/decap/gunduzirak)
-"iaB" = (
-/obj/structure/fluff/walldeco/wantedposter/r,
-/turf/open/floor/rogue/cobble,
-/area/rogue/outdoors/town)
 "iaL" = (
 /turf/open/floor/rogue/metal{
 	icon_state = "plating2"
@@ -269216,7 +269212,7 @@ sns
 sns
 sns
 shc
-iaB
+sns
 sns
 shc
 vOG
@@ -269665,14 +269661,14 @@ cKL
 sns
 sns
 sns
-sns
+nqN
 phl
 uZq
 cDX
 cDX
 uZq
 phl
-eBq
+nqN
 mDR
 mDR
 uCs
@@ -279163,7 +279159,7 @@ dWk
 sns
 sns
 sns
-sns
+dWk
 qok
 pWT
 aFv
