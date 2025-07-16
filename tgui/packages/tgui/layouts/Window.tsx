@@ -113,6 +113,9 @@ export const Window = (props: Props) => {
 
   return suspended ? null : (
     <Layout className="Window" theme={theme}>
+      <div className="SideBar">
+        <div className="SideBarDecoration" />
+      </div>
       <TitleBar
         title={title || decodeHtmlEntities(config.title)}
         status={config.status}
