@@ -5,6 +5,7 @@
 /datum/keybinding/human/down(client/user)
 	if(!iscarbon(user.mob))
 		return FALSE
+	return TRUE
 
 // Left commented because quick equip can put items into slots that are not in the UI, blame Roguetown.
 /* /datum/keybinding/human/quick_equip
