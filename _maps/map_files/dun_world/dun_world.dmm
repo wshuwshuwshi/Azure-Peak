@@ -21155,15 +21155,7 @@
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/outdoors/mountains/decap/gunduzirak)
 "gOQ" = (
-/obj/structure/closet/crate/roguecloset/lord,
-/obj/item/rogueweapon/sword/long/judgement,
-/obj/item/clothing/wrists/roguetown/bracers,
-/obj/item/storage/belt/rogue/leather/steel/tasset,
-/obj/item/clothing/gloves/roguetown/blacksteel/modern/plategloves,
-/obj/item/clothing/head/roguetown/helmet/blacksteel/modern/armet,
-/obj/item/clothing/shoes/roguetown/boots/blacksteel/modern/plateboots,
-/obj/item/clothing/suit/roguetown/armor/plate/modern/blacksteel_full_plate,
-/obj/item/clothing/under/roguetown/platelegs/blacksteel/modern,
+/obj/structure/closet/crate/roguecloset/lord/duke_preset,
 /turf/open/floor/rogue/carpet/lord/left,
 /area/rogue/indoors/town/manor)
 "gOR" = (
