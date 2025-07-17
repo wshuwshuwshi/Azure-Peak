@@ -188,6 +188,8 @@
 	backl = /obj/item/storage/backpack/rogue/satchel
 	backpack_contents = list(
 		/obj/item/ritechalk = 1,
+		/obj/item/rogueweapon/scabbard/sheath = 1,
+		/obj/item/storage/belt/rogue/pouch/coins/mid = 1
 		)
 	H.cmode_music = 'sound/music/combat_holy.ogg'
 	switch(H.patron?.type)
@@ -243,7 +245,7 @@
 	pants = /obj/item/clothing/under/roguetown/chainlegs
 	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
 	belt = /obj/item/storage/belt/rogue/leather/black
-	beltl = /obj/item/storage/belt/rogue/pouch/coins/mid
+	beltl = /obj/item/rogueweapon/scabbard/sword
 	beltr = /obj/item/storage/keyring/churchie
 	shoes = /obj/item/clothing/shoes/roguetown/boots/armor
 	armor = /obj/item/clothing/suit/roguetown/armor/plate	///Half-Plate not fullplate
