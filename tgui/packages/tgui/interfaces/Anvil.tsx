@@ -1,5 +1,12 @@
 import { Dispatch, SetStateAction, useState } from 'react';
-import { Box, Button, Input, Section, Stack } from 'tgui-core/components';
+import {
+  Box,
+  Button,
+  DmIcon,
+  Input,
+  Section,
+  Stack,
+} from 'tgui-core/components';
 
 import { useBackend } from '../backend';
 import { Window } from '../layouts';
@@ -40,7 +47,23 @@ export const Anvil = (props) => {
 };
 
 export const LonelyAnvil = (props) => {
-  return <Box>This anvil sits idle...</Box>;
+  return (
+    <Stack align="center" justify="center" fill>
+      <Stack.Item>
+        <Stack vertical align="center" justify="center">
+          <Stack.Item fontSize={2}>This Anvil Sits Idle.</Stack.Item>
+          <Stack.Item>
+            <DmIcon
+              icon="icons/roguetown/misc/forge.dmi"
+              icon_state="anvil"
+              width={16}
+              height={16}
+            />
+          </Stack.Item>
+        </Stack>
+      </Stack.Item>
+    </Stack>
+  );
 };
 
 export const SearchBar = (props: {
