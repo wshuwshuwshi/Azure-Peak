@@ -62,11 +62,57 @@
 	extra_fee = 0.5
 	is_public = TRUE
 	locked = FALSE
+	categories = list(
+		"Adventuring Supplies",
+		"Alcohols",
+		"Consumable",
+		"Gems",
+		"Instruments",
+		"Luxury",
+		"Livestock",
+		"Perfumes",
+		"Raw Materials",
+		"Seeds",
+		"Tools",
+		"Weapons (Foreign)",
+	)
+	categories_gamer = list()
 
 /obj/structure/roguemachine/goldface/public/examine()
 	. = ..()
 	. += "<span class='info'>A public version of the GOLDFACE. The guild charges a hefty fee for its usage. When locked, can be used to browse the inventory a merchant has.</span>"
-	. += "<span class='info'>An agreement between the Azurean Guild of Crafts and the Merchant's Guild mandates 100% extra profits on certain protected categories such as gems and steel gears when automated. And 50% on potions.</span>"
+	. += "<span class='info'>An agreement between the Guild of Craft and the Merchant's Guild mandates that certain protected goods are sold in a separate vendor that can be locked by the guildmembers.</span>"
+	. += "<span class='info'>The vendor can be locked by a key. The merchant make no profit whatsoever from the public vendor as the guild charges an exorbitant markup for automated handling.</span>"
+
+/obj/structure/roguemachine/goldface/public/smith
+	name = "Smithy's SILVERFACE"
+	lockid = "crafterguild"
+	categories = list(
+		"Armor (Iron)",
+		"Armor (Steel)",
+		"Weapons (Ranged)",
+		"Weapons (Iron and Shields)",
+		"Weapons (Steel)",
+	)
+	categories_gamer = list()
+
+/obj/structure/roguemachine/goldface/public/smith/examine()
+	. = ..()
+	. += span_info("This can be locked by a Guild's key")
+
+/obj/structure/roguemachine/goldface/public/tailor
+	name = "Tailor's SILVERFACE"
+	lockid = "tailor"
+	categories = list(
+		"Apparel",
+		"Wardrobe",
+		"Armor (Light)",
+	)
+	categories_gamer = list()
+
+/obj/structure/roguemachine/goldface/public/smith/examine()
+	. = ..()
+	. += span_info("This can be locked by a Tailor's key")
 
 /obj/structure/roguemachine/goldface/Initialize()
 	. = ..()
