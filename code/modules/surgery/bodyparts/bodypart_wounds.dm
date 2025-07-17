@@ -354,7 +354,11 @@
 		var/fracture_type = /datum/wound/fracture/head
 		var/necessary_damage = 0.9
 		if(resistance)
-			fracture_type = /datum/wound/fracture
+			if(zone_precise == BODY_ZONE_PRECISE_MOUTH)
+				fracture_type = /datum/wound/fracture/mouth
+				necessary_damage = 0.8
+			else
+				fracture_type = /datum/wound/fracture
 		else if(zone_precise == BODY_ZONE_PRECISE_SKULL)
 			fracture_type = /datum/wound/fracture/head/brain
 		else if(zone_precise== BODY_ZONE_PRECISE_EARS)
