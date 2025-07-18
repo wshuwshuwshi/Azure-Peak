@@ -150,11 +150,8 @@
 #include "code\__DEFINES\dcs\signals\signals_mob.dm"
 #include "code\__DEFINES\dcs\signals\signals_movable.dm"
 #include "code\__DEFINES\dcs\signals\signals_objectives.dm"
-<<<<<<< HEAD
-#include "code\__DEFINES\dcs\signals\signals_spatial_grid.dm"
-=======
 #include "code\__DEFINES\dcs\signals\signals_tgui.dm"
->>>>>>> upstream/main
+#include "code\__DEFINES\dcs\signals\signals_spatial_grid.dm"
 #include "code\__DEFINES\dcs\signals\signals_tram.dm"
 #include "code\__DEFINES\dcs\signals\signals_turf.dm"
 #include "code\__DEFINES\dcs\signals_atoms\lighting.dm"
@@ -1171,6 +1168,15 @@
 #include "code\modules\antagonists\roguetown\villain\maniac\maniac_items.dm"
 #include "code\modules\antagonists\roguetown\villain\maniac\maniac_life.dm"
 #include "code\modules\antagonists\roguetown\villain\maniac\maniac_wonders.dm"
+#include "code\modules\antagonists\roguetown\villain\siege\belligerent_lord.dm"
+#include "code\modules\antagonists\roguetown\villain\siege\classes\archer.dm"
+#include "code\modules\antagonists\roguetown\villain\siege\classes\captain.dm"
+#include "code\modules\antagonists\roguetown\villain\siege\classes\footman.dm"
+#include "code\modules\antagonists\roguetown\villain\siege\classes\knight.dm"
+#include "code\modules\antagonists\roguetown\villain\siege\classes\lord.dm"
+#include "code\modules\antagonists\roguetown\villain\siege\classes\mage.dm"
+#include "code\modules\antagonists\roguetown\villain\siege\classes\razvedka_bessmertna.dm"
+#include "code\modules\antagonists\roguetown\villain\siege\classes\squire.dm"
 #include "code\modules\antagonists\roguetown\villain\werewolf\werewolf.dm"
 #include "code\modules\antagonists\roguetown\villain\werewolf\werewolf_spells.dm"
 #include "code\modules\antagonists\roguetown\villain\werewolf\werewolf_transformation.dm"
