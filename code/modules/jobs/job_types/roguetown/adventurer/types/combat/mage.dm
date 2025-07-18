@@ -36,8 +36,9 @@
 				/obj/item/spellbook_unfinished/pre_arcyne = 1,
 				/obj/item/roguegem/amethyst = 1,
 				/obj/item/recipe_book/survival = 1,
+				/obj/item/rogueweapon/scabbard/sheath = 1,
 				/obj/item/recipe_book/magic = 1,
-				/obj/item/chalk = 1,
+				/obj/item/chalk = 1
 				)
 			H.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE)
 			H.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
@@ -71,7 +72,6 @@
 			gloves = /obj/item/clothing/gloves/roguetown/angle
 			belt = /obj/item/storage/belt/rogue/leather
 			neck = /obj/item/clothing/neck/roguetown/chaincoif
-			armor = /obj/item/clothing/suit/roguetown/armor/leather/heavy/coat
 			backl = /obj/item/storage/backpack/rogue/satchel
 			beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
@@ -98,19 +98,29 @@
 			H.cmode_music = 'sound/music/combat_bard.ogg'
 			ADD_TRAIT(H, TRAIT_MAGEARMOR, TRAIT_GENERIC)
 			ADD_TRAIT(H, TRAIT_ARCYNE_T2, TRAIT_GENERIC)
-			var/weapons = list("Bastard Sword", "Falchion & Wooden Shield", "Messer & Wooden Shield") // Much smaller selection with only three swords. You will probably want to upgrade.
+			var/weapons = list("Bastard Sword", "Falchion & Wooden Shield", "Messer & Wooden Shield", "Foreign Straight Sword") // Much smaller selection with only three swords. You will probably want to upgrade.
 			var/weapon_choice = input("Choose your weapon.", "TAKE UP ARMS") as anything in weapons
 			switch(weapon_choice)
 				if("Bastard Sword")
-					beltr = /obj/item/rogueweapon/sword/long
+					beltr = /obj/item/rogueweapon/scabbard/sword
+					r_hand = /obj/item/rogueweapon/sword/long
+					armor = /obj/item/clothing/suit/roguetown/armor/leather/heavy/coat
 				if("Falchion & Wooden Shield")
-					beltr = /obj/item/rogueweapon/sword/falchion
+					beltr = /obj/item/rogueweapon/scabbard/sword
 					backr = /obj/item/rogueweapon/shield/wood
+					r_hand = /obj/item/rogueweapon/sword/falchion
+					armor = /obj/item/clothing/suit/roguetown/armor/leather/heavy/coat
 					H.adjust_skillrank(/datum/skill/combat/shields, 1, TRUE)
 				if("Messer & Wooden Shield")
-					beltr = /obj/item/rogueweapon/sword/iron/messer
+					beltr = /obj/item/rogueweapon/scabbard/sword
 					backr = /obj/item/rogueweapon/shield/wood
+					r_hand = /obj/item/rogueweapon/sword/iron/messer
+					armor = /obj/item/clothing/suit/roguetown/armor/leather/heavy/coat
 					H.adjust_skillrank(/datum/skill/combat/shields, 1, TRUE)
+				if("Foreign Straight Sword")
+					r_hand = /obj/item/rogueweapon/sword/sabre/mulyeog // Meant to not have the special foreign scabbards.
+					beltr = /obj/item/rogueweapon/scabbard/sword
+					armor = /obj/item/clothing/suit/roguetown/armor/basiceast
 			switch(H.patron?.type)
 				if(/datum/patron/inhumen/zizo)
 					H.cmode_music = 'sound/music/combat_cult.ogg'
@@ -127,7 +137,8 @@
 			backl = /obj/item/storage/backpack/rogue/satchel
 			beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
-			beltr = /obj/item/rogueweapon/sword/sabre
+			beltr = /obj/item/rogueweapon/scabbard/sword
+			r_hand = /obj/item/rogueweapon/sword/sabre
 			backpack_contents = list(/obj/item/flashlight/flare/torch = 1, /obj/item/recipe_book/survival = 1)
 			if(H.mind)
 				H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/touch/prestidigitation)
