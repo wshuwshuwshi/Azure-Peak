@@ -56,7 +56,7 @@
 		owner.become_unknown_to(MF)
 
 	var/mob/living/carbon/human/H = owner.current
-	H.cmode_music = 'sound/music/combat_heretic.ogg' // TODO: Воланд Игорь Корнелюк а не этот ужас.
+	H.cmode_music = 'sound/music/combat_cult.ogg'
 	H.faction = list("undead")
 	H.equipOutfit(/datum/outfit/job/roguetown/unbound_deathknight)
 
