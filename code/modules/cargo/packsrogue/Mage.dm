@@ -176,7 +176,41 @@
 	cost = 2
 	contains = list(/obj/item/paper/scroll)
 
-/datum/supply_pack/rogue/bandit/Mage/mercury
-	name = "bottle of mercury"
-	cost = 50
-	contains = list(/obj/item/reagent_containers/glass/bottle/mercury)
+/datum/supply_pack/rogue/bandit/Mage/cinnabar
+	name = "Cinnabar Ore"
+	cost = 10
+	contains = list(/obj/item/rogueore/cinnabar = 1)
+
+/////////////////
+// 💎 GEMS 💎 //
+/////////////////
+
+/datum/supply_pack/rogue/Mage/toper
+	name = "Toper"
+	cost = 55
+	contains = list(/obj/item/roguegem/yellow)
+
+/datum/supply_pack/rogue/Mage/gemerald
+	name = "Gemerald"
+	cost = 70
+	contains = list(/obj/item/roguegem/green)
+
+/datum/supply_pack/rogue/Mage/saffira
+	name = "Saffira"
+	cost = 90
+	contains = list(/obj/item/roguegem/violet)
+
+/datum/supply_pack/rogue/Mage/Blortz
+	name = "Blortz"
+	cost = 120
+	contains = list(/obj/item/roguegem/blue)
+
+/datum/supply_pack/rogue/Mage/Rontz
+	name = "Rontz"
+	cost = 150
+	contains = list(/obj/item/roguegem/ruby)
+
+/datum/supply_pack/rogue/Mage/Dorpel
+	name = "Dorpel"
+	cost = 180
+	contains = list(/obj/item/roguegem/diamond)
