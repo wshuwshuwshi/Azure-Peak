@@ -106,7 +106,7 @@
 		poor_sod = candidate
 		break
 
-	if(poor_sod) // Prioritizing player to player interactions at all costs. Other objectives are given if no players opt in.
+	if(poor_sod) // Prioritizing player to player interactions at all costs
 		var/datum/objective/lordscommandment
 		if(rand(50))
 			lordscommandment = new /datum/objective/protect 
@@ -117,7 +117,7 @@
 		lordscommandment.owner = owner
 		lordscommandment.update_explanation_text()
 		objectives += lordscommandment
-	else
+	else // "Freeform" objective is assigned if no players opt in
 		var/datum/objective/free = new /datum/objective
 		free.name = "Protect area"
 		if(prob(50))
