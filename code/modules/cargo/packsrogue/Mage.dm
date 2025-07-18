@@ -167,40 +167,6 @@
 	cost = 150
 	contains = list(/obj/item/scrying)
 
-///////////////
-// 💎GEMS💎 //
-///////////////
-
-/datum/supply_pack/rogue/Mage/Dorpel
-	name = "Dorpel"
-	cost = 180
-	contains = list(/obj/item/roguegem/diamond)
-
-/datum/supply_pack/rogue/Mage/Rontz
-	name = "Rontz"
-	cost = 150
-	contains = list(/obj/item/roguegem/ruby)
-
-/datum/supply_pack/rogue/Mage/Blortz
-	name = "Blortz"
-	cost = 120
-	contains = list(/obj/item/roguegem/blue)
-
-/datum/supply_pack/rogue/Mage/saffira
-	name = "Saffira"
-	cost = 90
-	contains = list(/obj/item/roguegem/violet)
-
-/datum/supply_pack/rogue/Mage/gemerald
-	name = "Gemerald"
-	cost = 70
-	contains = list(/obj/item/roguegem/green)
-
-/datum/supply_pack/rogue/Mage/toper
-	name = "Toper"
-	cost = 55
-	contains = list(/obj/item/roguegem/yellow)
-
 /////////////
 // UTILITY //
 /////////////
