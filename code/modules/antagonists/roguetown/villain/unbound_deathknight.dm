@@ -18,6 +18,9 @@
 
 /// Skeletonizes the owner, making it a skeleton. Separate proc in hopes that someone will remove duplicate skelecode from AP.
 /datum/antagonist/unbound_death_knight/proc/skeletonize()
+	if(isdwarf(owner.current)) // I am terribly sorry, fellow dwarfs. Remove this after death knight's armor works with dwarves.
+		owner.current.set_species(/datum/species/human/northern)
+
 	var/mob/living/carbon/human/L = owner.current
 	QDEL_NULL(L.charflaw)
 	L.hairstyle = "Bald"
