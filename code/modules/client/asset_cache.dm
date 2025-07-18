@@ -453,30 +453,6 @@ GLOBAL_LIST_EMPTY(asset_datums)
 
 //DEFINITIONS FOR ASSET DATUMS START HERE.
 
-// If you use a file(...) object, instead of caching the asset it will be loaded from disk every time it's requested.
-// This is useful for development, but not recommended for production.
-// And if TGS is defined, we're being run in a production environment.
-
-#ifdef TGS
-/datum/asset/simple/tgui
-	assets = list(
-		"tgui.bundle.js" = "tgui/public/tgui.bundle.js",
-		"tgui.bundle.css" = "tgui/public/tgui.bundle.css",
-	)
-
-/datum/asset/simple/tgui_panel
-	assets = list(
-		"tgui-panel.bundle.js" = "tgui/public/tgui-panel.bundle.js",
-		"tgui-panel.bundle.css" = "tgui/public/tgui-panel.bundle.css",
-	)
-
-/datum/asset/simple/tgfont
-	assets = list(
-		"tgfont.eot" = "tgui/packages/tgfont/static/tgfont.eot",
-		"tgfont.woff2" = "tgui/packages/tgfont/static/tgfont.woff2",
-		"tgfont.css" = "tgui/packages/tgfont/static/tgfont.css",
-	)
-#else
 /datum/asset/simple/tgui
 	assets = list(
 		"tgui.bundle.js" = file("tgui/public/tgui.bundle.js"),
@@ -495,7 +471,6 @@ GLOBAL_LIST_EMPTY(asset_datums)
 		"tgfont.woff2" = file("tgui/packages/tgfont/static/tgfont.woff2"),
 		"tgfont.css" = file("tgui/packages/tgfont/static/tgfont.css"),
 	)
-#endif
 
 /datum/asset/group/goonchat
 	children = list(
