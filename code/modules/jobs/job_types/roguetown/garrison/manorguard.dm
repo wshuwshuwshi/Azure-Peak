@@ -47,7 +47,6 @@
 /datum/outfit/job/roguetown/manorguard
 	cloak = /obj/item/clothing/cloak/stabard/surcoat/guard
 	wrists = /obj/item/clothing/wrists/roguetown/bracers
-	gloves = /obj/item/clothing/gloves/roguetown/fingerless_leather
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather/reinforced
 	beltl = /obj/item/rogueweapon/mace/cudgel
 	belt = /obj/item/storage/belt/rogue/leather/black
@@ -89,10 +88,10 @@
 	H.change_stat("constitution", 1)
 	H.change_stat("endurance", 1)
 
-	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/lord		//Bit worse shirt protection than the archer
-	armor = /obj/item/clothing/suit/roguetown/armor/plate/scale			//Makes up for worse shirt protection with kinda better armor protection
+	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/lord
 	pants = /obj/item/clothing/under/roguetown/chainlegs
 	neck = /obj/item/clothing/neck/roguetown/gorget
+	gloves = /obj/item/clothing/gloves/roguetown/plate/iron
 
 	H.adjust_blindness(-3)
 	var/weapons = list("Warhammer & Shield","Axe & Shield","Halberd","Greataxe")
@@ -131,6 +130,14 @@
 	if(helmchoice != "None")
 		head = helmets[helmchoice]
 
+	var/armors = list(
+		"Lightweight Brigandine"		= /obj/item/clothing/suit/roguetown/armor/brigandine/light,
+		"Steel Cuirass"		= /obj/item/clothing/suit/roguetown/armor/plate/half,
+		"Scalemail"	= /obj/item/clothing/suit/roguetown/armor/plate/scale,
+	)
+	var/armorchoice = input("Choose your armor.", "TAKE UP ARMOR") as anything in armors
+	armor = armors[armorchoice]
+
 // Ranged weapons and daggers on the side - lighter armor, but fleet!
 /datum/advclass/manorguard/skirmisher
 	name = "Skirmisher"
@@ -168,6 +175,7 @@
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/studded		//Helps against arrows; makes sense for a ranged-type role.
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
 	pants = /obj/item/clothing/under/roguetown/trou/leather
+	gloves = /obj/item/clothing/gloves/roguetown/fingerless_leather
 
 	H.adjust_blindness(-3)
 	var/weapons = list("Crossbow","Bow","Sling")
@@ -243,6 +251,7 @@
 	armor = /obj/item/clothing/suit/roguetown/armor/plate/scale			//Makes up for worse shirt protection with kinda better armor protection
 	pants = /obj/item/clothing/under/roguetown/chainlegs
 	neck = /obj/item/clothing/neck/roguetown/gorget
+	gloves = /obj/item/clothing/gloves/roguetown/chain/iron
 
 	H.adjust_blindness(-3)
 	var/weapons = list("Bardiche","Sword & Shield")
@@ -276,3 +285,11 @@
 	var/helmchoice = input("Choose your Helm.", "TAKE UP HELMS") as anything in helmets
 	if(helmchoice != "None")
 		head = helmets[helmchoice]
+
+	var/armors = list(
+		"Lightweight Brigandine"		= /obj/item/clothing/suit/roguetown/armor/brigandine/light,
+		"Steel Cuirass"		= /obj/item/clothing/suit/roguetown/armor/plate/half,
+		"Scalemail"	= /obj/item/clothing/suit/roguetown/armor/plate/scale,
+	)
+	var/armorchoice = input("Choose your armor.", "TAKE UP ARMOR") as anything in armors
+	armor = armors[armorchoice]
