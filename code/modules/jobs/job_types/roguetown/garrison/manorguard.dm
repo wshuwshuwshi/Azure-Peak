@@ -132,7 +132,7 @@
 
 	var/armors = list(
 		"Lightweight Brigandine"		= /obj/item/clothing/suit/roguetown/armor/brigandine/light,
-		"Steel Cuirass"		= /obj/item/clothing/suit/roguetown/armor/plate/half,
+		"Iron Hauberk"		= /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/iron,
 		"Scalemail"	= /obj/item/clothing/suit/roguetown/armor/plate/scale,
 	)
 	var/armorchoice = input("Choose your armor.", "TAKE UP ARMOR") as anything in armors
@@ -288,7 +288,7 @@
 
 	var/armors = list(
 		"Lightweight Brigandine"		= /obj/item/clothing/suit/roguetown/armor/brigandine/light,
-		"Steel Cuirass"		= /obj/item/clothing/suit/roguetown/armor/plate/half,
+		"Iron Hauberk"		= /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/iron,
 		"Scalemail"	= /obj/item/clothing/suit/roguetown/armor/plate/scale,
 	)
 	var/armorchoice = input("Choose your armor.", "TAKE UP ARMOR") as anything in armors
