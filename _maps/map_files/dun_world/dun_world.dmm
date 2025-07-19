@@ -19514,13 +19514,6 @@
 /obj/machinery/light/rogue/wallfire/candle/l,
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors)
-"gkr" = (
-/obj/structure/stairs{
-	dir = 8
-	},
-/obj/structure/fluff/wallclock,
-/turf/open/floor/rogue/ruinedwood/herringbone,
-/area/rogue/indoors/town)
 "gkv" = (
 /turf/open/floor/rogue/grassred,
 /area/rogue/indoors/town)
@@ -20636,14 +20629,6 @@
 	},
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/town)
-"gAE" = (
-/obj/structure/fluff/railing/border{
-	dir = 5;
-	pixel_y = 0
-	},
-/obj/machinery/light/rogue/wallfire/candle/l,
-/turf/open/floor/rogue/ruinedwood/herringbone,
-/area/rogue/indoors/town)
 "gAH" = (
 /obj/structure/bookcase/random/reference,
 /turf/open/floor/rogue/hexstone,
@@ -61571,6 +61556,13 @@
 	},
 /turf/open/floor/rogue/metal,
 /area/rogue/under/cavewet/bogcaves/sunkencity)
+"tnY" = (
+/obj/structure/fluff/railing/border{
+	dir = 5
+	},
+/obj/structure/fluff/wallclock,
+/turf/open/floor/rogue/ruinedwood/herringbone,
+/area/rogue/indoors/town)
 "tnZ" = (
 /obj/structure/closet/crate/chest/neu,
 /obj/item/ingot/bronze,
@@ -285058,7 +285050,7 @@ cDX
 vpe
 uBc
 uBc
-gAE
+cMx
 lzp
 ptr
 vUD
@@ -285509,8 +285501,8 @@ pqo
 lKo
 aFv
 uBc
-gkr
-oDi
+uBc
+tnY
 ory
 uxc
 vUD
@@ -285961,8 +285953,8 @@ lKO
 lKo
 pWT
 uBc
-kRg
-oZg
+cbn
+oDi
 faB
 faB
 vUD
