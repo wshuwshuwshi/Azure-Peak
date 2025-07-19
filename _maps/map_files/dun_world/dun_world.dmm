@@ -274,6 +274,15 @@
 /obj/structure/table/church,
 /turf/open/floor/rogue/churchbrick,
 /area/rogue/under/underdark)
+"aeZ" = (
+/obj/effect/decal/mossy{
+	dir = 1
+	},
+/obj/effect/decal/cobble/mossy{
+	dir = 4
+	},
+/turf/open/floor/rogue/grassred,
+/area/rogue/outdoors/town)
 "afb" = (
 /obj/structure/fluff/walldeco/church/line{
 	dir = 4
@@ -31396,11 +31405,6 @@
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/under/cavewet/bogcaves/sunkencity)
-"jRD" = (
-/obj/structure/bars/cemetery,
-/obj/structure/flora/roguegrass/bush,
-/turf/open/floor/rogue/grassred,
-/area/rogue/outdoors/town)
 "jRG" = (
 /obj/structure/fluff/railing/border{
 	dir = 9
@@ -53931,16 +53935,6 @@
 	},
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/church/chapel)
-"qVY" = (
-/obj/structure/flora/roguegrass,
-/obj/effect/decal/mossy{
-	dir = 8
-	},
-/obj/effect/decal/cobble/mossy{
-	dir = 5
-	},
-/turf/open/floor/rogue/grassred,
-/area/rogue/outdoors/town)
 "qWm" = (
 /obj/structure/closet/crate/drawer,
 /turf/open/floor/carpet/stellar,
@@ -57051,11 +57045,6 @@
 	color = "#3b444b"
 	},
 /area/rogue/under/cave/dungeon1/gethsmane/inner)
-"rVk" = (
-/obj/structure/bars/cemetery,
-/obj/structure/flora/roguegrass/bush/wall,
-/turf/open/floor/rogue/grassred,
-/area/rogue/outdoors/town)
 "rVw" = (
 /obj/structure/stairs{
 	dir = 1
@@ -257589,7 +257578,7 @@ uJY
 uJY
 lcp
 aqX
-rVk
+iub
 sNZ
 fVo
 fVo
@@ -258040,8 +258029,8 @@ buZ
 egp
 fCD
 mnw
-qVY
-rVk
+qfA
+iub
 xFw
 sNZ
 fVo
@@ -258492,8 +258481,8 @@ aFv
 aFv
 aFv
 aFv
-jKw
-jRD
+aeZ
+iub
 pxF
 sNZ
 fVo
@@ -260301,7 +260290,7 @@ aFv
 hyp
 aFv
 dpi
-jRD
+iub
 pxF
 sNZ
 sNZ
@@ -260753,7 +260742,7 @@ dVS
 lFb
 gUQ
 mYm
-rVk
+iub
 emv
 pxF
 sNZ
@@ -261205,7 +261194,7 @@ gfk
 xmB
 bDT
 qfA
-rVk
+iub
 fGv
 pWT
 xFw
