@@ -782,6 +782,9 @@
 /obj/structure/fluff/statue/gargoyle
 	icon_state = "gargoyle"
 
+/obj/structure/fluff/statue/aasimar
+	icon_state = "aasimar"
+
 /obj/structure/fluff/statue/gargoyle/candles
 	icon_state = "gargoyle_candles"
 
@@ -978,6 +981,9 @@
 	var/donatedamnt = W.get_real_price()
 	if(user.mind)
 		if(user)
+			if(W.flags_1 & HOARDMASTER_SPAWNED_1)
+				to_chat(user, span_warning("This item is from the Hoard!"))
+				return
 			if(W.sellprice <= 0)
 				to_chat(user, span_warning("This item is worthless."))
 				return
