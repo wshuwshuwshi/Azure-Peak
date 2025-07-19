@@ -117,8 +117,8 @@
 	color = "#863333"
 	taste_description = "suspiciously bitter berries"
 
-/datum/reagent/consumable/soup/stew/garlik_soup
-	name = "garlik soup"
+/datum/reagent/consumable/soup/stew/garlick_soup
+	name = "garlick soup"
 	color = "#FAF9F6"
 	taste_description = "clear sinuses"
 
