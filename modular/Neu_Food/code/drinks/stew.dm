@@ -146,6 +146,7 @@
 	name = "tomato soup"
 	color = "#db5230"
 	taste_description = "home"
+	metabolization_rate = 0.5 // half as fast as normal, last twice as long - it is the best soup after all
 
 /datum/reagent/consumable/soup/stew/plum_soup
 	name = "plum soup"
