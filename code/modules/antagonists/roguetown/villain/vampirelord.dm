@@ -11,7 +11,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	roundend_category = "Vampires"
 	antagpanel_category = "Vampire"
 	job_rank = ROLE_VAMPIRE
-	var/list/inherent_traits = list(TRAIT_STRONGBITE, TRAIT_NOBLE, TRAIT_NOHUNGER, TRAIT_NOBREATH, TRAIT_NOPAIN, TRAIT_TOXIMMUNE, TRAIT_STEELHEARTED, TRAIT_NOSLEEP, TRAIT_VAMPMANSION, TRAIT_VAMP_DREAMS, TRAIT_INFINITE_STAMINA, TRAIT_HEAVYARMOR, TRAIT_COUNTERCOUNTERSPELL, TRAIT_STRENGTH_UNCAPPED, TRAIT_GRABIMMUNE)
+	var/list/inherent_traits = list(TRAIT_STRONGBITE, TRAIT_NOBLE, TRAIT_NOHUNGER, TRAIT_NOBREATH, TRAIT_NOPAIN, TRAIT_TOXIMMUNE, TRAIT_STEELHEARTED, TRAIT_NOSLEEP, TRAIT_VAMPMANSION, TRAIT_VAMP_DREAMS, TRAIT_INFINITE_STAMINA, TRAIT_HEAVYARMOR, TRAIT_COUNTERCOUNTERSPELL, TRAIT_STRENGTH_UNCAPPED)
 	antag_hud_type = ANTAG_HUD_TRAITOR
 	antag_hud_name = "vampire lord"
 	confess_lines = list(
@@ -448,6 +448,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 			owner.current.visible_message("<font color='red'>[owner.current] is enveloped in dark crimson, a horrific sound echoing in the area. They are evolved.</font>","<font color='red'>I AM ANCIENT, I AM THE LAND. EVEN THE SUN BOWS TO ME.</font>")
 			ascended = TRUE
 			SSmapping.retainer.ascended = TRUE
+			ADD_TRAIT(owner, TRAIT_GRABIMMUNE, TRAIT_GENERIC)
 			for(var/datum/mind/thrall in SSmapping.retainer.vampires)
 				if(thrall.special_role == "Vampire Spawn")
 					thrall.current.verbs |= /mob/living/carbon/human/proc/blood_strength
