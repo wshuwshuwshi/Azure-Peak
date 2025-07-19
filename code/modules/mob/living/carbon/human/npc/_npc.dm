@@ -64,11 +64,6 @@
 			return TRUE
 	return FALSE
 
-/mob/living/carbon/human/species/npc/deadite/npc_should_resist(ignore_grab = TRUE)
-	if(!check_mouth_grabbed())
-		ignore_grab ||= TRUE
-	return ..(ignore_grab = ignore_grab)
-
 /mob/living/carbon/human/proc/npc_should_resist(ignore_grab = FALSE)
 	// zombie antags don't try to resist non-mouthgrabs
 	if(mind?.has_antag_datum(/datum/antagonist/zombie) && !check_mouth_grabbed())
@@ -523,9 +518,6 @@
 		return TRUE
 
 	return FALSE
-
-/mob/living/carbon/human/deadite/npc_try_backstep()
-	return FALSE // deadites cannot juke
 
 /mob/living/carbon/human/proc/npc_try_backstep()
 	// JUKE: backstep after attacking if you're fast and have movement left
