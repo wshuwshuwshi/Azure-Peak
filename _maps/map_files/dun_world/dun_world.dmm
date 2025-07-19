@@ -31903,6 +31903,10 @@
 /obj/structure/fluff/clock,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town)
+"kaz" = (
+/obj/structure/mineral_door/wood/deadbolt,
+/turf/open/floor/rogue/concrete,
+/area/rogue/indoors/town)
 "kaI" = (
 /obj/structure/bed/rogue/inn/wool,
 /obj/item/bedsheet/rogue/fabric,
@@ -400753,7 +400757,7 @@ bGf
 uBc
 sKt
 agM
-lZd
+kaz
 dra
 dra
 pCT
@@ -404821,7 +404825,7 @@ uBc
 frG
 dra
 dra
-lZd
+kaz
 tGX
 tGX
 pCT
