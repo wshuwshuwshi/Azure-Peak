@@ -46,7 +46,6 @@
 
 /datum/outfit/job/roguetown/manorguard
 	cloak = /obj/item/clothing/cloak/stabard/surcoat/guard
-	wrists = /obj/item/clothing/wrists/roguetown/bracers
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather/reinforced
 	beltl = /obj/item/rogueweapon/mace/cudgel
 	belt = /obj/item/storage/belt/rogue/leather/black
@@ -89,7 +88,6 @@
 	H.change_stat("endurance", 1)
 
 	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/lord
-	pants = /obj/item/clothing/under/roguetown/chainlegs
 	neck = /obj/item/clothing/neck/roguetown/gorget
 	gloves = /obj/item/clothing/gloves/roguetown/plate/iron
 
@@ -138,6 +136,20 @@
 	var/armorchoice = input("Choose your armor.", "TAKE UP ARMOR") as anything in armors
 	armor = armors[armorchoice]
 
+	var/arms = list(
+		"Brigandine Splint Arms"		= wrists = /obj/item/clothing/wrists/roguetown/splintarms,
+		"Steel Bracers"		= wrists = /obj/item/clothing/wrists/roguetown/bracers,
+	)
+	var/armschoice = input("Choose your arm protection.", "READY THYSELF") as anything in arms
+	wrists = arms[armschoice]
+
+	var/chausses = list(
+		"Brigandine Chausses"		= /obj/item/clothing/under/roguetown/splintlegs,
+		"Steel Chain Chausses"		= /obj/item/clothing/under/roguetown/chainlegs,
+	)
+	var/chausseschoice = input("Choose your chausses.", "READY THYSELF") as anything in chausses
+	pants = chausses[chausseschoice]
+
 // Ranged weapons and daggers on the side - lighter armor, but fleet!
 /datum/advclass/manorguard/skirmisher
 	name = "Skirmisher"
@@ -176,6 +188,7 @@
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
 	pants = /obj/item/clothing/under/roguetown/trou/leather
 	gloves = /obj/item/clothing/gloves/roguetown/fingerless_leather
+	wrists = wrists = /obj/item/clothing/wrists/roguetown/bracers
 
 	H.adjust_blindness(-3)
 	var/weapons = list("Crossbow","Bow","Sling")
@@ -293,3 +306,17 @@
 	)
 	var/armorchoice = input("Choose your armor.", "TAKE UP ARMOR") as anything in armors
 	armor = armors[armorchoice]
+
+	var/arms = list(
+		"Brigandine Splint Arms"		= wrists = /obj/item/clothing/wrists/roguetown/splintarms,
+		"Steel Bracers"		= wrists = /obj/item/clothing/wrists/roguetown/bracers,
+	)
+	var/armschoice = input("Choose your arm protection.", "READY THYSELF") as anything in arms
+	wrists = arms[armschoice]
+
+	var/chausses = list(
+		"Brigandine Chausses"		= /obj/item/clothing/under/roguetown/splintlegs,
+		"Steel Chain Chausses"		= /obj/item/clothing/under/roguetown/chainlegs,
+	)
+	var/chausseschoice = input("Choose your chausses.", "READY THYSELF") as anything in chausses
+	pants = chausses[chausseschoice]
