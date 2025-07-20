@@ -29,7 +29,7 @@
 		if(used_intent.blade_class == BCLASS_STAB)
 			chance2hit += 10
 		if(used_intent.blade_class == BCLASS_PEEL)
-			chance2hit += 15
+			chance2hit += 25
 		if(used_intent.blade_class == BCLASS_CUT)
 			chance2hit += 6
 		if((used_intent.blade_class == BCLASS_BLUNT || used_intent.blade_class == BCLASS_SMASH) && check_zone(zone) != zone)	//A mace can't hit the eyes very well
@@ -38,6 +38,8 @@
 	if(I)
 		if(I.wlength == WLENGTH_SHORT)
 			chance2hit += 10
+		if((I.wlength >= WLENGTH_LONG) && (used_intent.blade_class == BCLASS_PEEL))
+			chance2hit -= 10
 
 	if(user.STAPER > 10)
 		chance2hit += (min((user.STAPER-10)*8, 40))
