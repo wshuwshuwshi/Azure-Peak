@@ -34208,11 +34208,6 @@
 /obj/structure/fermentation_keg/random,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/under/cave/orcdungeon)
-"kKf" = (
-/obj/structure/roguewindow,
-/obj/machinery/light/rogue/wallfire/candle/r,
-/turf/open/floor/rogue/concrete,
-/area/rogue/indoors/town/physician)
 "kKh" = (
 /obj/structure/spider/stickyweb,
 /turf/open/floor/rogue/dirt/road,
@@ -70450,6 +70445,10 @@
 	},
 /turf/open/floor/rogue/wood,
 /area/rogue/under/cave/orcdungeon)
+"vWy" = (
+/obj/structure/roguemachine/goldface/public/apothecary,
+/turf/closed/wall/mineral/rogue/craftstone,
+/area/rogue/indoors/town/physician)
 "vWB" = (
 /obj/structure/fermentation_keg/water,
 /turf/open/floor/rogue/tile/masonic{
@@ -74728,7 +74727,6 @@
 /obj/structure/fluff/railing/border{
 	dir = 8
 	},
-/obj/machinery/light/rogue/wallfire/candle,
 /obj/effect/decal/mossy{
 	dir = 8
 	},
@@ -267486,7 +267484,7 @@ hbC
 nbL
 nbL
 vRV
-kKf
+dkS
 noZ
 rZi
 xUD
@@ -267937,8 +267935,8 @@ rXa
 sGj
 dkS
 tdZ
-qoV
-sGj
+dkS
+vWy
 xmw
 qNR
 qzj
