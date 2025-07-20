@@ -140,6 +140,7 @@
 	var/arms = list(
 		"Brigandine Splint Arms"		= wrists = /obj/item/clothing/wrists/roguetown/splintarms,
 		"Steel Bracers"		= wrists = /obj/item/clothing/wrists/roguetown/bracers,
+		"Jack Chains"		= wrists = /obj/item/clothing/wrists/roguetown/bracers/jackchain,
 	)
 	var/armschoice = input("Choose your arm protection.", "READY THYSELF") as anything in arms
 	wrists = arms[armschoice]
@@ -189,7 +190,6 @@
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
 	pants = /obj/item/clothing/under/roguetown/trou/leather
 	gloves = /obj/item/clothing/gloves/roguetown/fingerless_leather
-	wrists = wrists = /obj/item/clothing/wrists/roguetown/bracers
 
 	H.adjust_blindness(-3)
 	var/weapons = list("Crossbow","Bow","Sling")
@@ -215,6 +215,14 @@
 		if("Medium Armor")
 			pants = /obj/item/clothing/under/roguetown/chainlegs
 			armor = /obj/item/clothing/suit/roguetown/armor/brigandine/light
+
+	var/arms = list(
+		"Brigandine Splint Arms"		= wrists = /obj/item/clothing/wrists/roguetown/splintarms,
+		"Steel Bracers"		= wrists = /obj/item/clothing/wrists/roguetown/bracers,
+		"Jack Chains"		= wrists = /obj/item/clothing/wrists/roguetown/bracers/jackchain,
+	)
+	var/armschoice = input("Choose your arm protection.", "READY THYSELF") as anything in arms
+	wrists = arms[armschoice]
 
 	backpack_contents = list(
 		/obj/item/rogueweapon/huntingknife/idagger/steel/special = 1,
@@ -325,6 +333,7 @@
 	var/arms = list(
 		"Brigandine Splint Arms"		= wrists = /obj/item/clothing/wrists/roguetown/splintarms,
 		"Steel Bracers"		= wrists = /obj/item/clothing/wrists/roguetown/bracers,
+		"Jack Chains"		= wrists = /obj/item/clothing/wrists/roguetown/bracers/jackchain,
 	)
 	var/armschoice = input("Choose your arm protection.", "READY THYSELF") as anything in arms
 	wrists = arms[armschoice]
