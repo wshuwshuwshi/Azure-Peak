@@ -198,7 +198,7 @@
 				if (THEY_THEM, THEY_THEM_F, IT_ITS)
 					. += span_redtext("[m1] repulsive!")
 	
-	if (HAS_TRAIT(src, TRAIT_CRITICAL_WEAKNESS))
+	if (HAS_TRAIT(src, TRAIT_CRITICAL_WEAKNESS) && (!HAS_TRAIT(src, TRAIT_VAMP_DREAMS)))
 		if(isliving(user))
 			var/mob/living/L = user
 			if(L.STAINT > 9 && L.STAPER > 9)
