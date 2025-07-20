@@ -53,6 +53,7 @@
 	wrists = /obj/item/clothing/wrists/roguetown/bracers
 	gloves = /obj/item/clothing/gloves/roguetown/plate/iron
 	backr = /obj/item/storage/backpack/rogue/satchel/black
+	head = /obj/item/clothing/head/roguetown/helmet/sallet/visored
 	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy
 	id = /obj/item/scomstone/garrison
 
