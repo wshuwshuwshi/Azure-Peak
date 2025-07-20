@@ -890,6 +890,11 @@
 			if(VD) 
 				if(!VD.disguised)
 					villain_text += span_userdanger("A MONSTER!")
+		if(mind.special_role == "Vampire Spawn")
+			var/datum/antagonist/vampirelord/lesser/VD = mind.has_antag_datum(/datum/antagonist/vampirelord/lesser)
+			if(VD) 
+				if(!VD.disguised)
+					villain_text += span_userdanger("A LICKER!")
 		if(mind.assigned_role == "Lunatic")
 			villain_text += span_userdanger("LUNATIC!")
 
