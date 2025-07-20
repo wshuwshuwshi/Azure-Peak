@@ -87,7 +87,7 @@
 	H.change_stat("constitution", 1)
 	H.change_stat("endurance", 1)
 
-	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/lord
+	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
 	neck = /obj/item/clothing/neck/roguetown/gorget
 	gloves = /obj/item/clothing/gloves/roguetown/plate/iron
 
@@ -183,7 +183,7 @@
 	H.change_stat("perception", 2)
 	H.change_stat("speed", 2)
 
-	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/lord			// Cant wear chainmail anymoooree
+	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson			// Cant wear chainmail anymoooree
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/studded		//Helps against arrows; makes sense for a ranged-type role.
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
 	pants = /obj/item/clothing/under/roguetown/trou/leather
@@ -260,7 +260,7 @@
 	H.change_stat("endurance", 2) // Your name is speed, and speed is running.
 	H.change_stat("intelligence", 1) // No strength to account for the nominally better weapons. We'll see.
 
-	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/lord		//Bit worse shirt protection than the archer -- as foot soldier.
+	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson		//Bit worse shirt protection than the archer -- as foot soldier.
 	armor = /obj/item/clothing/suit/roguetown/armor/plate/scale			//Makes up for worse shirt protection with kinda better armor protection
 	pants = /obj/item/clothing/under/roguetown/chainlegs
 	neck = /obj/item/clothing/neck/roguetown/gorget
