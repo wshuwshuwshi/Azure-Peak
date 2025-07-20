@@ -122,6 +122,7 @@
 	"Bascinet Helmet"		= /obj/item/clothing/head/roguetown/helmet/bascinet,
 	"Sallet Helmet"		= /obj/item/clothing/head/roguetown/helmet/sallet,
 	"Winged Helmet" 	= /obj/item/clothing/head/roguetown/helmet/winged,
+	"Skull Cap"			= /obj/item/clothing/head/roguetown/helmet/skullcap,
 	"None"
 	)
 	var/helmchoice = input("Choose your Helm.", "TAKE UP HELMS") as anything in helmets
@@ -193,6 +194,8 @@
 	H.adjust_blindness(-3)
 	var/weapons = list("Crossbow","Bow","Sling")
 	var/weapon_choice = input("Choose your weapon.", "TAKE UP ARMS") as anything in weapons
+	var/armor_options = list("Light Armor", "Medium Armor")
+	var/armor_choice = input("Choose your armor.", "TAKE UP ARMS") as anything in armor_options
 	H.set_blindness(0)
 	switch(weapon_choice)
 		if("Crossbow")
@@ -204,6 +207,14 @@
 		if("Sling")
 			beltr = /obj/item/quiver/sling/iron
 			r_hand = /obj/item/gun/ballistic/revolver/grenadelauncher/sling // Both are belt slots and it's not worth setting where the cugel goes for everyone else, sad.
+
+	switch(armor_choice)
+		if("Light Armor")
+			pants = /obj/item/clothing/under/roguetown/heavy_leather_pants
+			armor = /obj/item/clothing/suit/roguetown/armor/leather/heavy/coat
+		if("Medium Armor")
+			pants = /obj/item/clothing/under/roguetown/chainlegs
+			armor = /obj/item/clothing/suit/roguetown/armor/brigandine/light
 
 	backpack_contents = list(
 		/obj/item/rogueweapon/huntingknife/idagger/steel/special = 1,
@@ -219,11 +230,14 @@
 	"Bascinet Helmet"		= /obj/item/clothing/head/roguetown/helmet/bascinet,
 	"Sallet Helmet"		= /obj/item/clothing/head/roguetown/helmet/sallet,
 	"Winged Helmet" 	= /obj/item/clothing/head/roguetown/helmet/winged,
+	"Skull Cap"			= /obj/item/clothing/head/roguetown/helmet/skullcap,
 	"None"
 	)
 	var/helmchoice = input("Choose your Helm.", "TAKE UP HELMS") as anything in helmets
 	if(helmchoice != "None")
 		head = helmets[helmchoice]
+
+		
 
 /datum/advclass/manorguard/cavalry
 	name = "Cavalryman"
@@ -293,6 +307,7 @@
 	"Bascinet Helmet"		= /obj/item/clothing/head/roguetown/helmet/bascinet,
 	"Sallet Helmet"		= /obj/item/clothing/head/roguetown/helmet/sallet,
 	"Winged Helmet" 	= /obj/item/clothing/head/roguetown/helmet/winged,
+	"Skull Cap"			= /obj/item/clothing/head/roguetown/helmet/skullcap,
 	"None"
 	)
 	var/helmchoice = input("Choose your Helm.", "TAKE UP HELMS") as anything in helmets
