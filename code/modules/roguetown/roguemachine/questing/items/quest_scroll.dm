@@ -229,7 +229,7 @@
 			min_distance = dist
 
 	if(!target || !(target_turf = get_turf(target)))
-		last_compass_direction = "Target location unknown"
+		last_compass_direction = "location unknown"
 		last_z_level_hint = ""
 		return
 
@@ -249,7 +249,7 @@
 
 	// If very close, don't show direction
 	if(distance <= 7)
-		last_compass_direction = "Target is nearby"
+		last_compass_direction = "is nearby"
 		last_z_level_hint = ""
 		return
 
