@@ -362,7 +362,7 @@
 
 
 /obj/item/rogueweapon/scabbard/kazengun //Empty scabbard.
-	name = "Simple Kazengun Saya"
+	name = "simple kazengun saya"
 	desc = "The Saya is a lacquered wooden sheath used to carry a 'koto' style Kazengun blade, adorned with a brass ring around the opening and a black, woven cord. It can be used to parry incoming blows."
 	icon_state = "kazscab"
 	item_state = "kazscab"
@@ -375,7 +375,7 @@
 
 
 /obj/item/rogueweapon/scabbard/kazengun/steel
-	name = "Kazengun Saya"
+	name = "kazengun saya"
 	desc = "The Saya is a lacquered wooden sheath used to carry a 'koto' style Kazengun blade, adorned with a brass ring around the opening and a black, woven cord. This one carries cloud patterns of the Hasikobe Clan It can be used to parry incoming blows."
 	icon_state = "kazscab_steel"
 	item_state = "kazscab_steel"
@@ -383,7 +383,7 @@
 
 
 /obj/item/rogueweapon/scabbard/kazengun/gold
-	name = "Gold-stained Kazengun Saya"
+	name = "gold-stained kazengun saya"
 	desc = "An ornate, wooden scabbard with a sash. Great for parrying."
 	icon_state = "kazscab_gold"
 	item_state = "kazscab_gold"

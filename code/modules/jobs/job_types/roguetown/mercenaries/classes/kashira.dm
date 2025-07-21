@@ -1,5 +1,5 @@
 /datum/advclass/mercenary/kashira //shitcode approved by free
-	name = "Hangyaku"
+	name = "Hatamoto"
 	tutorial = "An officer in the mercenary armies of the Hasikobe Clan, you are a trusted member of Lord Hasikobe Shiro's retinue, and are expected to bring honour (and coin) to the Clan, wherever in the world you may be- even if other Daimyos do not see the Hasikobe that way."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = NON_DWARVEN_RACE_TYPES

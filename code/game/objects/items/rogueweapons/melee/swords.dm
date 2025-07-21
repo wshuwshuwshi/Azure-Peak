@@ -1348,7 +1348,7 @@
 
 /obj/item/rogueweapon/sword/sabre/mulyeog
 	force = 25
-	name = "Koto Blade"
+	name = "koto Blade"
 	desc = "A traditional, but outmoded style of blade from the Kazengun Isles- a koto blade is not quite as curved as the blades used in the Shogunate's armies. There's a red tassel on the hilt, the blade is rougher around the edges and well worn."
 	sheathe_icon = "mulyeog"
 	icon_state = "eastsword1"
@@ -1356,13 +1356,13 @@
 	wdefense = 3
 
 /obj/item/rogueweapon/sword/sabre/mulyeog/rumahench
-	name = "Koto Blade"
+	name = "koto Blade"
 	desc = "A traditional, but outmoded style of blade from the Kazengun Isles- a koto blade is not quite as curved as the blades used in the Shogunate's armies. This one contains cloud patterns of the Hasikobe Clan on it"
 	icon_state = "eastsword2"
 
 /obj/item/rogueweapon/sword/sabre/mulyeog/rumacaptain
 	force = 30
-	name = "Suriage Blade"
+	name = "suriage Blade"
 	desc = "A cheap but effective sabre from the Kazengun Isles, this blade was rewarded for duty by the Daimyo of the Hasikobe Clan. Its blade's edge is gold-stained and its grip is embossed with cloud patterns"
 	icon_state = "eastsword3"
 	max_integrity = 180
