@@ -32,5 +32,5 @@
 
 /datum/statpack/physical/enduring
 	name = "Enduring"
-	desc = "You've spent yils willingly submitting your body through a most perilous journey. Stalwart in your faith, you've sworn to never flee again.
+	desc = "You've spent yils willingly submitting your body through a most perilous journey. Stalwart in your faith, you've sworn to never flee again."
 	stat_array = list(STAT_CONSTITUTION = 3, STAT_ENDURANCE = 3, STAT_PERCEPTION = -1, STAT_SPEED = -4)
