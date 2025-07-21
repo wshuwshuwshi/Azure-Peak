@@ -47,7 +47,10 @@
 			
 			user.visible_message(span_notice("[user] does [user.p_their()] lips with \the [src]."), \
 								 span_notice("I take a moment to apply \the [src]. Perfect!"))
-			H.lip_style = "lipstick"
+			if(H.getorganslot(ORGAN_SLOT_SNOUT))
+				H.lip_style = "lipstick_nosides"
+			else
+				H.lip_style = "lipstick"
 			H.lip_color = colour
 			H.update_body()
 		else
@@ -66,7 +69,10 @@
 			if(do_after(user, 20, target = H))
 				user.visible_message(span_notice("[user] does [H]'s lips with \the [src]."), \
 									 span_notice("I apply \the [src] on [H]'s lips."))
-				H.lip_style = "lipstick"
+				if(H.getorganslot(ORGAN_SLOT_SNOUT))
+					H.lip_style = "lipstick_nosides"
+				else
+					H.lip_style = "lipstick"
 				H.lip_color = colour
 				H.update_body()
 	else
