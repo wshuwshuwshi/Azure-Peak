@@ -1,15 +1,14 @@
-#define WHISPER_COOLDOWN 10 SECONDS
 /obj/item/paper/scroll/quest
 	name = "enchanted quest scroll"
-	desc = "A weathered scroll oft known as a \"whispering scroll\". Enchanted with magicks to make it whisper to its bearer when opened the location of its target.\n\
-	The magical protections make it resistant to damage and tampering. It will only whisper when carried on the person of the quest bearer."
+	desc = "A weathered scroll enchanted to list the active quests from the Adventurers' Guild. The magical protections make it resistant to damage and tampering."
 	icon = 'code/modules/roguetown/roguemachine/questing/questing.dmi'
 	icon_state = "scroll_quest"
 	var/base_icon_state = "scroll_quest"
 	var/datum/quest/assigned_quest
 	var/last_compass_direction = ""
 	var/last_z_level_hint = ""
-	var/last_whisper = 0 // Last time the scroll whispered to the user
+	var/minimum_range = 5 // Minimum range to show you are at the destination
+	var/atom/target 
 	resistance_flags = FIRE_PROOF | LAVA_PROOF | INDESTRUCTIBLE | UNACIDABLE
 	max_integrity = 1000
 	armor = list("blunt" = 100, "slash" = 100, "stab" = 100, "piercing" = 100, "fire" = 100, "acid" = 100)
@@ -19,7 +18,7 @@
 	if(assigned_quest)
 		assigned_quest.quest_scroll = src 
 	update_quest_text()
-	START_PROCESSING(SSprocessing, src)
+	START_PROCESSING(SSfastprocess, src)
 
 /obj/item/paper/scroll/quest/Destroy()
 	if(assigned_quest)
@@ -45,7 +44,7 @@
 		// Clean up the quest
 		qdel(assigned_quest)
 		assigned_quest = null
-	STOP_PROCESSING(SSprocessing, src)
+	STOP_PROCESSING(SSfastprocess, src)
 	return ..()
 
 /obj/item/paper/scroll/quest/update_icon_state()
@@ -53,35 +52,35 @@
 		icon_state = info ? "[base_icon_state]_info" : "[base_icon_state]"
 	else
 		icon_state = "[base_icon_state]_closed"
-	
 
 /obj/item/paper/scroll/quest/process()
-	if(world.time > last_whisper + WHISPER_COOLDOWN)
-		last_whisper = world.time
-		target_whisper()
+	
 
-/obj/item/paper/scroll/quest/proc/target_whisper()
-	if(!assigned_quest || assigned_quest.complete || !assigned_quest.quest_receiver_reference)
+// Yes this is literally pinpointer from base SS13 someone can make it more immersive later
+/obj/item/paper/scroll/quest/update_overlays()
+	. = ..()
+	if(!open || !assigned_quest)
+		return	
+	var/turf/here = get_turf(src)
+	var/turf/there = get_turf(target)
+	if(!here || !there || here.z != there.z)
+		. += "pinon[alert ? "alert" : ""]null"
 		return
-	var/obj/itemloc = src.loc
-	var/mob/quest_bearer = assigned_quest.quest_receiver_reference?.resolve()
-	// I should refactor this out at some point
-	if(!istype(itemloc, /mob/living))
-		while(!istype(itemloc, /mob/living))
-			if(isnull(itemloc))
-				return
-			itemloc = itemloc.loc
-			if(istype(itemloc, /turf))
-				return
-	if(itemloc != quest_bearer)
-		return
-	if(open && quest_bearer)
-		update_compass(quest_bearer)
-		var/message = ""
-		message = "[last_compass_direction]"
-		if(last_z_level_hint)
-			message += " ([last_z_level_hint])"
-		to_chat(quest_bearer, span_info("The scroll whispers to you, the target is [message]"))
+	. += get_direction_icon(here, there)
+	
+///Called by update_icon after sanity.
+/obj/item/paper/scroll/quest/proc/get_direction_icon(here, there)
+	if(get_dist_euclidean_squared(here, there) <= minimum_range)
+		return "pinon[alert ? "alert" : ""]direct"
+	else
+		setDir(get_dir(here, there))
+		switch(get_dist(here, there))
+			if(7 to 14)
+				return "pinon[alert ? "alert" : "close"]"
+			if(15 to 40)
+				return "pinon[alert ? "alert" : "medium"]"
+			if(41 to INFINITY)
+				return "pinon[alert ? "alert" : "far"]"
 
 /obj/item/paper/scroll/quest/examine(mob/user)
 	. = ..()
@@ -152,7 +151,7 @@
 	scroll_text += "<b>Difficulty:</b> [assigned_quest.quest_difficulty].<br><br>"
 
 	if(last_compass_direction)
-		scroll_text += "<b>Direction:</b> The target is [last_compass_direction]. "
+		scroll_text += "<b>Direction:</b> [last_compass_direction]. "
 		if(last_z_level_hint)
 			scroll_text += " ([last_z_level_hint])"
 	scroll_text += "<br>"
@@ -213,7 +212,6 @@
 	last_compass_direction = "Searching for target..."
 	last_z_level_hint = ""
 
-	var/atom/target
 	var/turf/target_turf
 	var/min_distance = INFINITY
 
@@ -233,14 +231,14 @@
 		last_z_level_hint = ""
 		return
 
-	// We want the target to know z level differences but verticality exists
-	// We don't want to frustrate player by forcing them to track on the same z level
-	// Especially cuz of how many transitions exist
+	// Handle Z-level differences first
 	if(target_turf.z != user_turf.z)
 		var/z_diff = abs(target_turf.z - user_turf.z)
+		last_compass_direction = "Target is on another level"
 		last_z_level_hint = target_turf.z > user_turf.z ? \
 			"[z_diff] level\s above you" : \
 			"[z_diff] level\s below you"
+		return
 
 	// Calculate direction from user to target
 	var/dx = target_turf.x - user_turf.x  // EAST direction
@@ -273,9 +271,8 @@
 		if(101 to INFINITY)
 			distance_text = "far away"
 
-	last_compass_direction = "[distance_text] to the [direction_text]"
-	if(!last_z_level_hint)
-		last_z_level_hint = "on this level"
+	last_compass_direction = "Target is [distance_text] to the [direction_text]"
+	last_z_level_hint = "on this level"
 
 /obj/item/paper/scroll/quest/proc/get_precise_direction_from_angle(angle)
 	// ATAN2 gives angle from positive x-axis (east) to the vector
@@ -324,5 +321,3 @@
 			return "northwest"
 		if(326.25 to 348.75)
 			return "north-northwest"
-
-#undef WHISPER_COOLDOWN
