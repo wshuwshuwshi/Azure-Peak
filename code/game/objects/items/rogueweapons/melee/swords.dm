@@ -67,7 +67,6 @@
 
 /datum/intent/sword/peel/big
 	name = "big sword armor peel"
-	peel_divisor = 6 //You have way easier time doing so
 	reach = 2
 
 /datum/intent/sword/chop
