@@ -39,7 +39,7 @@
 		to_chat(user, "[target] has pledged a vow to Necra. This will not work.")
 		return FALSE
 	if(target.revived >= 1)		//If the target has been revived before, and has not had their revived counter reduced at all, they will be unable to be revived.
-		to_chat(user, "[target] has been worked on before, their soul is too far gone to try again..")
+		to_chat(user, "[target]'s heart bears the telltale signs of a previous infusion, their soul is too far gone to try again..")
 		return FALSE
 
 /datum/surgery_step/infuse_lux/preop(mob/user, mob/living/target, target_zone, obj/item/tool, datum/intent/intent)
