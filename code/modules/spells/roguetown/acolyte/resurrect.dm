@@ -63,7 +63,7 @@
 			revert_cast()
 			return FALSE
 		if(target.revived >= 1)
-			to_chat(user, span_warning("Due to prior revivals [target]'s soul appears too weak to continue on.."))
+			to_chat(user, span_warning("[target]'s soul has already been pried from Necra's grasp once. She shant permit such trespasses twice..."))
 			revert_cast()
 			return FALSE
 		if(HAS_TRAIT(target, TRAIT_NECRAS_VOW))
