@@ -90,6 +90,8 @@
 
 	var/hellbound = 0 //People who've signed infernal contracts are unrevivable.
 
+	var/revived = 0		//People who have been revived already can no longer be revived.
+
 	var/list/weather_immunities = list()
 
 	var/stun_absorption = null //converted to a list of stun absorption sources this mob has when one is added
